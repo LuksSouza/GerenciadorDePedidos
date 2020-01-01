@@ -1,0 +1,76 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Dashboard</ui:define>
+
+	<ui:define name="corpo">
+
+		<h:form>
+
+			<p:commandButton value="Adicionar" onclick="PF('adicionarCliente').show(); return false;">
+				<f:setPropertyActionListener target="#{dialogBean.clienteAdicionado}" value="#{dialogBean.clienteAdicionado}" />			
+			</p:commandButton>
+
+			<p:dataTable id="clientesDataTable"
+				style="width: 100%; margin-top: 20px" var="cliente"
+				value="#{dialogBean.clientes}"
+				emptyMessage="Nenhum cliente encontrado." paginator="true" rows="10"
+				paginatorPosition="bottom" paginatorAlwaysVisible="false">
+
+				<p:column headerText="Nome">
+					<h:outputText value="#{cliente.nome}" />
+				</p:column>
+
+				<p:column headerText="CPF/CNPJ" style="width: 200px">
+					<h:outputText value="#{cliente.cpfOrCnpj}" />
+				</p:column>
+
+				<p:column headerText="Excluir" style="width: 80px">
+					<p:commandButton value="Excluir" icon="ui-icon-trash"
+						onclick="PF('confirmacaoExclusaoCliente').show(); return false;" />
+				</p:column>
+
+			</p:dataTable>
+
+			<p:dialog id="clienteDialog" widgetVar="adicionarCliente" header="Adicionar Cliente"
+				modal="true">
+
+				<h:panelGroup>
+					<p:messages />
+
+					<p:panelGrid columns="2">
+
+						<p:outputLabel value="Nome" />
+						<p:inputText value="#{dialogBean.clienteAdicionado.nome}" />
+
+						<p:outputLabel value="CPF/CNPJ" />
+						<p:inputText value="#{dialogBean.clienteAdicionado.cpfOrCnpj}" />
+
+					</p:panelGrid>
+					<p:commandButton value="Incluir" icon="ui-icon-plusthick"
+						action="#{dialogBean.adicionar}" update="clientesDataTable clienteDialog" />
+				</h:panelGroup>
+
+			</p:dialog>
+
+			<p:confirmDialog header="Exclusão de cliente"
+				message="Tem certeza que deseja excluir o cliente?"
+				widgetVar="confirmacaoExclusaoCliente">
+
+				<p:commandButton value="Sim" update="clientesDataTable"
+					oncomplete="PF('confirmacaoExclusaoCliente').hide()"
+					action="#{dialogBean.excluirCliente}" />
+				<p:button value="Não"
+					onclick="PF('confirmacaoExclusaoCliente').hide(); return false;" />
+
+			</p:confirmDialog>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

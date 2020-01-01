@@ -24,13 +24,58 @@
 			</f:facet>
 		</p:ajaxStatus>
 		
-		
 		<header>
-			<div>
+			<div style="float: left">
 				<h:link>
 					<h:graphicImage library="images" name="logo-algaworks.png" />
 				</h:link>
 			</div>
+			
+			<div style="float: right; margin-right: 110px">
+				<span style="float: left; height: 30px; line-height: 30px; margin-right: 60px">
+				Olá usuário!
+				</span>
+				
+				<h:form style="display: inline-block">
+					<p:menubar styleClass="menu-sistema" autoDisplay="false" tabindex="1" >
+					
+						<p:submenu label="Cadastros">
+					
+							<p:submenu label="Cliente">
+								<p:menuitem value="Cadastrar Clientes" outcome="/clientes/CadastroCliente" />
+								<p:menuitem value="Pesquisar Clientes" outcome="/clientes/PesquisaCliente" />
+							</p:submenu>
+							
+							<p:submenu label="Usuário">
+								<p:menuitem value="Cadastrar Usuário" outcome="/usuarios/CadastroUsuario" />
+								<p:menuitem value="Pesquisar Usuário" outcome="/usuarios/PesquisaUsuario" />
+							</p:submenu>
+							
+							<p:separator/>
+							
+							<p:submenu label="Categorias" />
+							
+							<p:submenu label="Produtos">
+								<p:menuitem value="Cadastrar Produtos" outcome="/produtos/CadastroProduto" />
+								<p:menuitem value="Pesquisar Produtos" outcome="/produtos/PesquisaProduto" />
+							</p:submenu>
+							
+						</p:submenu>
+						
+						<p:separator/>
+						
+						<p:submenu label="Pedidos">
+								<p:menuitem value="Cadastrar Pedidos" outcome="/pedidos/CadastroPedido" />
+								<p:menuitem value="Pesquisar Pedidos" outcome="/pedidos/PesquisaPedido" />
+						</p:submenu>
+							
+						<p:menuitem value="Sair"/>
+						
+					</p:menubar>
+				</h:form>
+			</div>
+			
+			<div style="clear: both"></div>
 		</header>
 		
 		<div id="conteudo">

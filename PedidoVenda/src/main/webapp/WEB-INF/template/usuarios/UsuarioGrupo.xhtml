@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:dataTable value="#{pesquisaUsuarioBean.grupos}" var="grupo" id="tabelaGrupos"
+		style="margin-top: 20px" emptyMessage="Nenhum grupo adicionado." 
+		paginator="true" rows="5" paginatorPosition="bottom" paginatorAlwaysVisible="false">
+	
+		<p:column headerText="Grupo">
+			<h:outputText value="#{grupo.descricao}"/>
+		</p:column>
+
+		<p:column style="text-align: center; width: 25px">
+			<p:commandButton icon="ui-icon-trash" title="Excluir" />
+		</p:column>
+		
+	</p:dataTable>
+
+</ui:composition>

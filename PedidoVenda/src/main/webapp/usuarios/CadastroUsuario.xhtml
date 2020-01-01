@@ -8,31 +8,44 @@
 	<ui:define name="titulo">Novo Usuário</ui:define>
 
 	<ui:define name="corpo">
-
-		<h1>Novo Usuário</h1>
-
-		<p:toolbar style="margin-top: 20px">
-			<p:toolbarGroup>
-				<p:button value="Novo" outcome="/usuarios/CadastroUsuario" />
-				<p:commandButton value="Salvar" id="botaoSalvar" />
-			</p:toolbarGroup>
-			<p:toolbarGroup align="right">
-				<p:button value="Pesquisa" />
-			</p:toolbarGroup>
-		</p:toolbar>
-
-		<p:panelGrid columns="2" id="painel"
-			style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
-			<p:outputLabel value="Nome" for="nome" />
-			<p:inputText id="nome" size="45" maxlength="80" />
-
-			<p:outputLabel value="E-mail" for="email" />
-			<p:inputText id="email" size="45" maxlength="80" />
+		<h:form>
+			<h1>Novo Usuário</h1>
+	
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:button value="Novo" outcome="/usuarios/CadastroUsuario" />
+					<p:commandButton value="Salvar" id="botaoSalvar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Pesquisa" outcome="/usuarios/PesquisaUsuario" />
+				</p:toolbarGroup>
+			</p:toolbar>
+	
+			<p:panelGrid columns="2" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				
+				<p:outputLabel value="Nome" for="nome" />
+				<p:inputText id="nome" size="45" maxlength="80" />
+	
+				<p:outputLabel value="E-mail" for="email" />
+				<p:inputText id="email" size="45" maxlength="80" />
+				
+				<p:outputLabel value="Senha" for="senha" />
+	        	<p:password id="senha" feedback="true" inline="true" size="30" maxlength="30"/>
 			
-			<p:outputLabel value="Senha" for="senha" />
-        	<p:password id="senha" feedback="true" inline="true" size="30" maxlength="30"/>
-		</p:panelGrid>
-
+			</p:panelGrid>
+			
+			<p:panelGrid columns="2" style="margin-top: 20px; border: none">
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="Selecione um grupo" itemValue="" />
+					<f:selectItems value="#{pesquisaUsuarioBean.grupoUsuarioDescricao}" />
+				</p:selectOneMenu>
+				<p:commandButton value="Adicionar Grupo" />
+			</p:panelGrid>
+		
+			<ui:include src="/WEB-INF/template/usuarios/UsuarioGrupo.xhtml"/>
+		
+		</h:form>
 	</ui:define>
 
 </ui:composition>

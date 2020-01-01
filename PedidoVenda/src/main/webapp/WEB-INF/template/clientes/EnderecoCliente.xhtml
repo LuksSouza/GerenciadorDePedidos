@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:dataTable value="#{pesquisaClienteBean.enderecos}" var="endereco" id="tabelaEnderecos"
+		style="margin-top: 20px" emptyMessage="Nenhum endereço encontrado." 
+		paginator="true" rows="10" paginatorPosition="bottom" paginatorAlwaysVisible="false">
+	
+		<p:column headerText="Logradouro">
+			<h:outputText value="#{endereco.logradouro}"/>
+		</p:column>
+		
+		<p:column headerText="Número" style="width: 60px">
+			<h:outputText value="#{endereco.numero}"/>
+		</p:column>
+		
+		<p:column headerText="Complemento" style="width: 200px">
+			<h:outputText value="#{endereco.complemento}"/>
+		</p:column>
+		
+		<p:column headerText="CEP" style="width: 60px">
+			<h:outputText value="#{endereco.cep}"/>
+		</p:column>
+		
+		<p:column headerText="Cidade/UF" style="width: 60px">
+			<h:outputText value="#{endereco.cidade}"/>/<h:outputText value="#{endereco.estado}"/>
+		</p:column>
+
+		<p:column style="text-align: center; width: 50px">
+			<p:button icon="ui-icon-pencil" title="Editar" />
+			<p:commandButton icon="ui-icon-trash" title="Excluir" />
+		</p:column>
+		
+	</p:dataTable>
+
+</ui:composition>

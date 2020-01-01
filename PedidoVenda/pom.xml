@@ -20,11 +20,17 @@
 		</dependency>
 
 		<!-- PrimeFaces (biblioteca de componentes) -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>3.5</version>
 			<scope>compile</scope>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+		<dependency>
+		    <groupId>org.primefaces</groupId>
+		    <artifactId>primefaces</artifactId>
+		    <version>7.0</version>
 		</dependency>
 	</dependencies>
 	

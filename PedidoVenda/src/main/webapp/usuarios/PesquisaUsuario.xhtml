@@ -1,0 +1,52 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa de Usuarios</ui:define>
+
+	<ui:define name="corpo">
+		<h:form>
+			<h1>Pesquisa de Usuarios</h1>
+	
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:commandButton value="Pesquisar" outcome="/usuarios/CadastroUsuario" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Novo" outcome="/usuarios/CadastroUsuario" />
+				</p:toolbarGroup>
+			</p:toolbar>
+	
+			<p:panelGrid columns="2" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				
+				<p:outputLabel value="Nome" for="nome" />
+				<p:inputText id="nome" size="40" />
+				
+			</p:panelGrid>
+	
+			<p:dataTable var="usuario" value="#{pesquisaUsuarioBean.usuarios}"
+				style="margin-top: 20px" emptyMessage="Nenhum usuário encontrado." 
+				paginator="true" rows="10" paginatorPosition="bottom" paginatorAlwaysVisible="false">
+	
+				<p:column headerText="Nome" style="text-align: left">
+					<h:outputText value="#{usuario.nome}" />
+				</p:column>
+	
+				<p:column headerText="E-mail" style="text-align: left; width: 150px">
+					<h:outputText value="#{usuario.email}" />
+				</p:column>
+	
+				<p:column style="text-align: center; width: 50px">
+					<p:button icon="ui-icon-pencil" title="Editar" />
+					<p:commandButton icon="ui-icon-trash" title="Excluir" />
+				</p:column>
+	
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
