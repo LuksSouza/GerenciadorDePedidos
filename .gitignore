@@ -57,3 +57,6 @@ local.properties
 
 # Target folder
 PedidoVenda/target/
+
+# IntelliJ
+.idea/

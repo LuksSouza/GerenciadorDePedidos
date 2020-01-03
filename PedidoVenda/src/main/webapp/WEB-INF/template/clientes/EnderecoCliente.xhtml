@@ -4,7 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-	<p:dataTable value="#{pesquisaClienteBean.enderecos}" var="endereco" id="tabelaEnderecos"
+	<p:dataTable id="enderecosDataTable" value="#{pesquisaClienteBean.enderecos}" var="endereco"
 		style="margin-top: 20px" emptyMessage="Nenhum endereço encontrado." 
 		paginator="true" rows="10" paginatorPosition="bottom" paginatorAlwaysVisible="false">
 	
@@ -20,19 +20,30 @@
 			<h:outputText value="#{endereco.complemento}"/>
 		</p:column>
 		
-		<p:column headerText="CEP" style="width: 60px">
+		<p:column headerText="CEP" style="width: 80px">
 			<h:outputText value="#{endereco.cep}"/>
 		</p:column>
 		
-		<p:column headerText="Cidade/UF" style="width: 60px">
+		<p:column headerText="Cidade/UF" style="width: 80px">
 			<h:outputText value="#{endereco.cidade}"/>/<h:outputText value="#{endereco.estado}"/>
 		</p:column>
 
 		<p:column style="text-align: center; width: 50px">
 			<p:button icon="ui-icon-pencil" title="Editar" />
-			<p:commandButton icon="ui-icon-trash" title="Excluir" />
+			<p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirmacaoExclusaoEndereco').show(); return false;"/>
 		</p:column>
 		
 	</p:dataTable>
+	
+	<p:confirmDialog header="Exclusão de endereço"
+		message="Tem certeza que deseja excluir o endereço?"
+		widgetVar="confirmacaoExclusaoEndereco">
+
+		<p:commandButton value="Sim" update="enderecosDataTable"
+			oncomplete="PF('confirmacaoExclusaoEndereco').hide()" />
+		<p:button value="Não"
+			onclick="PF('confirmacaoExclusaoEndereco').hide(); return false;" />
+
+	</p:confirmDialog>
 
 </ui:composition>

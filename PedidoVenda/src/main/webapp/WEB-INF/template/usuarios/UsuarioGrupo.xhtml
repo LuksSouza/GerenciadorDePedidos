@@ -4,7 +4,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-	<p:dataTable value="#{pesquisaUsuarioBean.grupos}" var="grupo" id="tabelaGrupos"
+	<p:dataTable id="gruposDataTable" value="#{pesquisaUsuarioBean.grupos}" var="grupo" 
 		style="margin-top: 20px" emptyMessage="Nenhum grupo adicionado." 
 		paginator="true" rows="5" paginatorPosition="bottom" paginatorAlwaysVisible="false">
 	
@@ -13,9 +13,20 @@
 		</p:column>
 
 		<p:column style="text-align: center; width: 25px">
-			<p:commandButton icon="ui-icon-trash" title="Excluir" />
+			<p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirmacaoExclusaoGrupo').show(); return false;"/>
 		</p:column>
 		
 	</p:dataTable>
+	
+	<p:confirmDialog header="Exclusão de grupo"
+		message="Tem certeza que deseja excluir o grupo?"
+		widgetVar="confirmacaoExclusaoGrupo">
+
+		<p:commandButton value="Sim" update="gruposDataTable"
+			oncomplete="PF('confirmacaoExclusaoGrupo').hide()" />
+		<p:button value="Não"
+			onclick="PF('confirmacaoExclusaoGrupo').hide(); return false;" />
+
+	</p:confirmDialog>
 
 </ui:composition>

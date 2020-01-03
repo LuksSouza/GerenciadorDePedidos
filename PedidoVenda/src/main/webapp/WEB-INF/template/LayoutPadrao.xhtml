@@ -27,7 +27,7 @@
 		<header>
 			<div style="float: left">
 				<h:link>
-					<h:graphicImage library="images" name="logo-algaworks.png" />
+					<h:graphicImage library="images" name="logo-algaworks.png" onclick="/Home" />
 				</h:link>
 			</div>
 			
@@ -50,9 +50,7 @@
 								<p:menuitem value="Cadastrar Usuário" outcome="/usuarios/CadastroUsuario" />
 								<p:menuitem value="Pesquisar Usuário" outcome="/usuarios/PesquisaUsuario" />
 							</p:submenu>
-							
-							<p:separator/>
-							
+														
 							<p:submenu label="Categorias" />
 							
 							<p:submenu label="Produtos">
@@ -61,9 +59,7 @@
 							</p:submenu>
 							
 						</p:submenu>
-						
-						<p:separator/>
-						
+												
 						<p:submenu label="Pedidos">
 								<p:menuitem value="Cadastrar Pedidos" outcome="/pedidos/CadastroPedido" />
 								<p:menuitem value="Pesquisar Pedidos" outcome="/pedidos/PesquisaPedido" />

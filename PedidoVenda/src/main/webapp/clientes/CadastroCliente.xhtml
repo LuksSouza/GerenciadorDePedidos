@@ -40,10 +40,42 @@
 				<p:inputText id="email" size="45" maxlength="80" />
 			</p:panelGrid>
 			
-			<p:panel>
-				<p:commandButton value="Adicionar Endereço"/>
+			<p:panel style="margin-right:20px;">
+				<p:commandButton value="Adicionar Endereço" oncomplete="PF('enderecoDialog').show(); return false;"/>
 			</p:panel>
 			
+			<p:dialog id="enderecoDialog" widgetVar="enderecoDialog" modal="true" header="Inclusão de endereço" resizable="false" width="510px" height="250px">
+			
+				<p:panelGrid columns="2" columnClasses="rotulo, campo">
+					
+					<p:outputLabel value="Logradouro"/>
+					<h:inputText value="#{cadastroClienteBean.endereco.logradouro}" style="width: 235px"/>
+					
+					<p:outputLabel value="Número"/>
+					<h:inputText value="#{cadastroClienteBean.endereco.numero}" style="width: 50px"/>
+					
+					<p:outputLabel value="Complemento"/>
+					<h:inputText value="#{cadastroClienteBean.endereco.numero}" style="width: 150px"/>
+					
+					<p:outputLabel value="CEP"/>
+					<p:inputMask mask="99.999-999" value="#{cadastroClienteBean.endereco.cep}" style="width: 65px"/>
+					
+					<h:panelGroup>
+						<p:outputLabel value="Cidade"/>
+						<h:inputText value="#{cadastroClienteBean.endereco.cidade}" style="width: 150px"/>
+					</h:panelGroup>
+					
+					<h:panelGroup>
+						<p:outputLabel value="Estado"/>
+						<h:inputText value="#{cadastroClienteBean.endereco.estado}" maxlength="2" style="width: 50px"/>
+					</h:panelGroup>
+					
+				</p:panelGrid>
+				
+				<p:commandButton value="Incluir" />
+				
+			</p:dialog>
+						
 			<ui:include src="/WEB-INF/template/clientes/EnderecoCliente.xhtml"/>
 			
 		</h:form>

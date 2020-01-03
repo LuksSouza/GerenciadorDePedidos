@@ -11,22 +11,31 @@ import model.Produto;
 
 @ManagedBean
 public class PesquisaProdutoBean {
-	
-	private List<Produto> produtos;
-	
-	@PostConstruct
-	private void init() {
-		produtos = new ArrayList<Produto>();
-		
-		Produto produto = new Produto(123, "Bala de morango", "Doces", new BigDecimal(1.50), 98);
-		
-		for (int i = 0; i < 20; i++) {
-			this.produtos.add(produto);
-		}
-	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
+    private List<Produto> produtos;
+    private Produto produtoSelecionado;
+
+    @PostConstruct
+    private void init() {
+	produtos = new ArrayList<Produto>();
+
+	for (int i = 0; i < 20; i++) {
+	    this.produtos.add(new Produto(123, "Bala de morango" + i, "Doces", new BigDecimal(1.50), 98));
 	}
+    }
+
+    public void excluir() {
+	this.produtos.remove(this.produtoSelecionado);
+	this.produtoSelecionado = null;
+    }
+
+    public List<Produto> getProdutos() {
+	return produtos;
+    }
+
+    public void setProdutoSelecionado(Produto produtoSelecionado) {
+	this.produtoSelecionado = produtoSelecionado;
+	System.out.println(this.produtoSelecionado.getNome());
+    }
 
 }
