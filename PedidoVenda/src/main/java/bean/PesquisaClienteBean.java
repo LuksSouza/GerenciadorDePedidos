@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
 import enumeration.TipoCliente;
 import model.Cliente;
 import model.Endereco;
 
-@ManagedBean
+//@ManagedBean
+@Named
 public class PesquisaClienteBean {
 	
 	private List<Cliente> clientes;
