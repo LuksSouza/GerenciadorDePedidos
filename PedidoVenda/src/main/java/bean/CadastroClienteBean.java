@@ -17,8 +17,8 @@ public class CadastroClienteBean {
 	}
 
 	public void salvar() {
-		throw new RuntimeException();
-		//throw new NegocioException("Método salvar ainda não foi implementado!");
+		//throw new RuntimeException("Teste de exceção.");
+		throw new NegocioException("Método salvar ainda não foi implementado!");
 	}
 	
 	public Endereco getEndereco() {
