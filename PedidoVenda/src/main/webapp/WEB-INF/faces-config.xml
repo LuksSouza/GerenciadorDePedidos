@@ -8,7 +8,7 @@
     
 	<factory>
 		<exception-handler-factory>
-			exception.JsfExceptionHandlerFactory
+			com.algaworks.pedidovenda.exception.JsfExceptionHandlerFactory
 		</exception-handler-factory>
 	</factory>
 

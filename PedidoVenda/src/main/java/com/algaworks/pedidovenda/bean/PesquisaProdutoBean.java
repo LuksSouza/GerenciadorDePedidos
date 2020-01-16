@@ -1,4 +1,4 @@
-package bean;
+package com.algaworks.pedidovenda.bean;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import model.Produto;
+import com.algaworks.pedidovenda.model.Produto;
 
 @ManagedBean
 public class PesquisaProdutoBean {

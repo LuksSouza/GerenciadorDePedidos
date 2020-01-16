@@ -1,6 +1,6 @@
-package model;
+package com.algaworks.pedidovenda.model;
 
-import enumeration.TipoCliente;
+import com.algaworks.pedidovenda.enumeration.TipoCliente;
 
 public class Cliente {
 

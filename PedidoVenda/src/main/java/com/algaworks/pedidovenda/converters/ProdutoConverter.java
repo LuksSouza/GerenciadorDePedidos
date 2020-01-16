@@ -1,11 +1,11 @@
-package converters;
+package com.algaworks.pedidovenda.converters;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-import model.Produto;
+import com.algaworks.pedidovenda.model.Produto;
 
 @FacesConverter("produtoConverter")
 public class ProdutoConverter implements Converter {

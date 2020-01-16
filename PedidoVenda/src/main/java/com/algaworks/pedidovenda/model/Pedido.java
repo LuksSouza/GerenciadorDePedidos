@@ -1,9 +1,9 @@
-package model;
+package com.algaworks.pedidovenda.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-import enumeration.StatusPedido;
+import com.algaworks.pedidovenda.enumeration.StatusPedido;
 
 public class Pedido {
 

@@ -1,4 +1,4 @@
-package bean;
+package com.algaworks.pedidovenda.bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +7,9 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 
-import enumeration.TipoCliente;
-import model.Cliente;
-import model.Endereco;
+import com.algaworks.pedidovenda.enumeration.TipoCliente;
+import com.algaworks.pedidovenda.model.Cliente;
+import com.algaworks.pedidovenda.model.Endereco;
 
 //@ManagedBean
 @Named

@@ -1,4 +1,4 @@
-package exception;
+package com.algaworks.pedidovenda.exception;
 
 import javax.faces.context.ExceptionHandler;
 import javax.faces.context.ExceptionHandlerFactory;

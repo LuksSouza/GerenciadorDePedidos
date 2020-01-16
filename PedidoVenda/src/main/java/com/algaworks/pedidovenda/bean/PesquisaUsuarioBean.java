@@ -1,4 +1,4 @@
-package bean;
+package com.algaworks.pedidovenda.bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import enumeration.GrupoUsuario;
-import model.Usuario;
+import com.algaworks.pedidovenda.enumeration.GrupoUsuario;
+import com.algaworks.pedidovenda.model.Usuario;
 
 @ManagedBean
 public class PesquisaUsuarioBean {

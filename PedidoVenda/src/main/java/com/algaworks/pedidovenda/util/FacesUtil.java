@@ -1,4 +1,4 @@
-package util;
+package com.algaworks.pedidovenda.util;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

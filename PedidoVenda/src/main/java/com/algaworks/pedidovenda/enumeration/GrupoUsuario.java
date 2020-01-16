@@ -1,4 +1,4 @@
-package enumeration;
+package com.algaworks.pedidovenda.enumeration;
 
 import java.util.Arrays;
 import java.util.List;

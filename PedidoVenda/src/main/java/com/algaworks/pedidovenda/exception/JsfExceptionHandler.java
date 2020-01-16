@@ -1,4 +1,4 @@
-package exception;
+package com.algaworks.pedidovenda.exception;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -15,8 +15,8 @@ import javax.faces.event.ExceptionQueuedEventContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import service.NegocioException;
-import util.FacesUtil;
+import com.algaworks.pedidovenda.service.NegocioException;
+import com.algaworks.pedidovenda.util.FacesUtil;
 
 public class JsfExceptionHandler extends ExceptionHandlerWrapper {
 

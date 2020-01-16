@@ -1,4 +1,4 @@
-package model;
+package com.algaworks.pedidovenda.model;
 
 public class Endereco {
 
