@@ -17,25 +17,25 @@ public class PesquisaProdutoBean {
 
     @PostConstruct
     private void init() {
-	produtos = new ArrayList<Produto>();
+        produtos = new ArrayList<Produto>();
 
-	for (int i = 0; i < 20; i++) {
-	    this.produtos.add(new Produto(123, "Bala de morango" + i, "Doces", new BigDecimal(1.50), 98));
-	}
+        for (int i = 0; i < 20; i++) {
+            this.produtos.add(new Produto(i, "Bala de morango" + i, "sku", new BigDecimal(1.50), 98, null));
+        }
     }
 
     public void excluir() {
-	this.produtos.remove(this.produtoSelecionado);
-	this.produtoSelecionado = null;
+        this.produtos.remove(this.produtoSelecionado);
+        this.produtoSelecionado = null;
     }
 
     public List<Produto> getProdutos() {
-	return produtos;
+        return produtos;
     }
 
     public void setProdutoSelecionado(Produto produtoSelecionado) {
-	this.produtoSelecionado = produtoSelecionado;
-	System.out.println(this.produtoSelecionado.getNome());
+        this.produtoSelecionado = produtoSelecionado;
+        System.out.println(this.produtoSelecionado.getNome());
     }
 
 }
