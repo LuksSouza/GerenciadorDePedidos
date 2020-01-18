@@ -6,7 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 
-import com.algaworks.pedidovenda.enumeration.TipoCliente;
+import com.algaworks.pedidovenda.enumeration.TipoPessoa;
 import com.algaworks.pedidovenda.model.Cliente;
 import com.algaworks.pedidovenda.model.Endereco;
 
@@ -21,7 +21,7 @@ public class PesquisaClienteBean {
 		this.clientes = new ArrayList<Cliente>();
 		this.enderecos = new ArrayList<Endereco>();
 		
-		Cliente cliente = new Cliente("Teste", TipoCliente.FISICA, "33322244485", "teste@teste.com.br");
+		Cliente cliente = new Cliente("Teste", TipoPessoa.FISICA, "33322244485", "teste@teste.com.br");
 		Endereco endereco = new Endereco("Endereço de teste do dataTable", 12345, "Edifício de teste, 9º andar", "12.556-963", "Sintra", "Lisboa");
 		
 		for (int i = 0; i < 20; i++) {

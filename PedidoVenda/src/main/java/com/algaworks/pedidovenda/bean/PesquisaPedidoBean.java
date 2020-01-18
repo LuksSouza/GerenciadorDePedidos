@@ -1,8 +1,6 @@
 package com.algaworks.pedidovenda.bean;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -24,7 +22,7 @@ public class PesquisaPedidoBean {
 	private void init() {
 		this.pedidos = new ArrayList<Pedido>();
 		
-		Pedido pedido = new Pedido(123, "Cliente Teste", "Vendedor Teste", new Date(), new BigDecimal(1250.56), StatusPedido.EMITIDO);
+		Pedido pedido = new Pedido();//123, "Cliente Teste", "Vendedor Teste", new Date(), new BigDecimal(1250.56), StatusPedido.EMITIDO);
 		
 		for(int i = 0; i < 20; i++) {
 			this.pedidos.add(pedido);

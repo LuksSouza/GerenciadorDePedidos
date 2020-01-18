@@ -1,13 +1,13 @@
 package com.algaworks.pedidovenda.enumeration;
 
-public enum TipoCliente {
+public enum TipoPessoa {
 	
 	FISICA("Pessoa Física"),
 	JURIDICA("Pessoa Jurídica");
 	
 	private String descricao;
 
-	private TipoCliente(String descricao) {
+	private TipoPessoa(String descricao) {
 		this.descricao = descricao;		
 	}
 

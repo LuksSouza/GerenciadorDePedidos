@@ -1,33 +1,123 @@
 package com.algaworks.pedidovenda.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ITEM_PEDIDO")
-public class ItemPedido {
+@Table(name = "item_pedido")
+public class ItemPedido implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+	private static final long serialVersionUID = -8140836893066918291L;
 
-    private Integer quantidade;
-    private BigDecimal valorUnitario;
-    
-    @ManyToOne
-    @JoinColumn(name = "pedido_id")
-    private Pedido pedido;
-    
-    @OneToOne
-    @JoinColumn(name = "produto_id")
-    private Produto produto;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@Column(nullable = false, length = 3)
+	private Integer quantidade;
+
+	@Column(name = "valor_unitario", nullable = false, precision = 10, scale = 2)
+	private BigDecimal valorUnitario;
+
+	@ManyToOne
+	@JoinColumn(name = "pedido_id", nullable = false)
+	private Pedido pedido;
+
+	@ManyToOne
+	@JoinColumn(name = "produto_id", nullable = false)
+	private Produto produto;
+
+	public ItemPedido(Integer id, Integer quantidade, BigDecimal valorUnitario, Pedido pedido, Produto produto) {
+		super();
+		this.id = id;
+		this.quantidade = quantidade;
+		this.valorUnitario = valorUnitario;
+		this.pedido = pedido;
+		this.produto = produto;
+	}
+
+	public ItemPedido() {
+		super();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public BigDecimal getValorUnitario() {
+		return valorUnitario;
+	}
+
+	public void setValorUnitario(BigDecimal valorUnitario) {
+		this.valorUnitario = valorUnitario;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ItemPedido other = (ItemPedido) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "ItemPedido [id=" + id + ", quantidade=" + quantidade + ", valorUnitario=" + valorUnitario + ", pedido="
+				+ pedido + ", produto=" + produto + "]";
+	}
 
 }

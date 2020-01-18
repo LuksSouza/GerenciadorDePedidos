@@ -4,14 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CATEGORIA")
+@Table(name = "categoria")
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 6110942955025266986L;
@@ -19,7 +24,15 @@ public class Categoria implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@Column(nullable = false, length = 60)
 	private String descricao;
+
+	@ManyToOne
+	@JoinColumn(name = "categoria_pai_id")
+	private Categoria categoriaPai;
+
+	@OneToMany(mappedBy = "categoriaPai", cascade = CascadeType.ALL)
 	private List<Categoria> subcategorias = new ArrayList<Categoria>();
 
 	public Categoria(Integer id, String descricao) {
