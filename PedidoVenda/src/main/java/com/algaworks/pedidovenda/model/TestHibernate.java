@@ -1,3 +1,5 @@
+package com.algaworks.pedidovenda.model;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -14,7 +16,7 @@ public class TestHibernate {
 
 		// Usuario usuario = new Usuario("Teste 2", "teste@teste.com", "123");
 
-		manager.persist(usuario);
+		//manager.persist(usuario);
 
 		trx.commit();
 	}

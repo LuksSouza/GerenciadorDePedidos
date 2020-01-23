@@ -21,8 +21,8 @@ public class PesquisaClienteBean {
 		this.clientes = new ArrayList<Cliente>();
 		this.enderecos = new ArrayList<Endereco>();
 		
-		Cliente cliente = new Cliente("Teste", TipoPessoa.FISICA, "33322244485", "teste@teste.com.br");
-		Endereco endereco = new Endereco("Endereço de teste do dataTable", 12345, "Edifício de teste, 9º andar", "12.556-963", "Sintra", "Lisboa");
+		Cliente cliente = new Cliente(1l, "Teste 1", "teste@teste.com", "390487968-57", TipoPessoa.FISICA);
+		Endereco endereco = new Endereco(1l, "Endereço de teste do dataTable", 12345l, "Edifício de teste, 9º andar", "12.556-963", "Sintra", "Lisboa");
 		
 		for (int i = 0; i < 20; i++) {
 			this.clientes.add(cliente);

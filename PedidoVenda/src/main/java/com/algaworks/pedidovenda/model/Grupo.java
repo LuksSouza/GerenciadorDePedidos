@@ -17,7 +17,7 @@ public class Grupo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	@Column(nullable = false, length = 40)
 	private String nome;
@@ -25,7 +25,7 @@ public class Grupo implements Serializable {
 	@Column(nullable = false, length = 80)
 	private String descricao;
 
-	public Grupo(Integer id, String nome, String descricao) {
+	public Grupo(Long id, String nome, String descricao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -35,11 +35,11 @@ public class Grupo implements Serializable {
 	public Grupo() {
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -20,7 +20,7 @@ public class ItemPedido implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	@Column(nullable = false, length = 3)
 	private Integer quantidade;
@@ -36,7 +36,7 @@ public class ItemPedido implements Serializable {
 	@JoinColumn(name = "produto_id", nullable = false)
 	private Produto produto;
 
-	public ItemPedido(Integer id, Integer quantidade, BigDecimal valorUnitario, Pedido pedido, Produto produto) {
+	public ItemPedido(Long id, Integer quantidade, BigDecimal valorUnitario, Pedido pedido, Produto produto) {
 		super();
 		this.id = id;
 		this.quantidade = quantidade;
@@ -49,11 +49,11 @@ public class ItemPedido implements Serializable {
 		super();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -58,7 +58,7 @@
 					<h:inputText value="#{cadastroClienteBean.endereco.numero}" style="width: 50px"/>
 					
 					<p:outputLabel value="Complemento"/>
-					<h:inputText value="#{cadastroClienteBean.endereco.numero}" style="width: 150px"/>
+					<h:inputText value="#{cadastroClienteBean.endereco.complemento}" style="width: 150px"/>
 					
 					<p:outputLabel value="CEP"/>
 					<p:inputMask mask="99.999-999" value="#{cadastroClienteBean.endereco.cep}" style="width: 65px"/>
@@ -70,7 +70,7 @@
 					
 					<h:panelGroup>
 						<p:outputLabel value="Estado"/>
-						<h:inputText value="#{cadastroClienteBean.endereco.estado}" maxlength="2" style="width: 50px"/>
+						<h:inputText value="#{cadastroClienteBean.endereco.uf}" maxlength="2" style="width: 50px"/>
 					</h:panelGroup>
 					
 				</p:panelGrid>

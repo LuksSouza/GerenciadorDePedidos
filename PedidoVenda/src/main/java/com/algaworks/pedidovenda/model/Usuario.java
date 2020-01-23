@@ -14,104 +14,109 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 @Table(name = "usuario")
 public class Usuario implements Serializable {
 
-	private static final long serialVersionUID = 2068486293995370189L;
+    private static final long serialVersionUID = 2068486293995370189L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
-	@Column(nullable = false, length = 80)
-	private String nome;
-	
-	@Column(nullable = false, unique = true, length = 255)
-	private String email;
-	
-	@Column(nullable = false, length = 20)
-	private String senha;
-	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(
-		name = "usuario_grupo", 
-		joinColumns = @JoinColumn(referencedColumnName = "usuario_id"),
-		inverseJoinColumns = @JoinColumn(referencedColumnName = "grupo_id")
-	)
-	private List<Grupo> grupos = new ArrayList<Grupo>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Usuario(String nome, String email, String senha) {
-		super();
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
-	}
+    @NotNull
+    @Column(nullable = false, length = 80)
+    private String nome;
 
-	public Usuario() {
-	}
+    @NotNull
+    @Email
+    @Column(nullable = false, unique = true, length = 255)
+    private String email;
 
-	public String getNome() {
-		return nome;
-	}
+    @NotNull
+    @Column(nullable = false, length = 20)
+    private String senha;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @NotNull
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(referencedColumnName = "usuario_id"), inverseJoinColumns = @JoinColumn(referencedColumnName = "grupo_id"))
+    private List<Grupo> grupos = new ArrayList<Grupo>();
 
-	public String getEmail() {
-		return email;
-	}
+    public Usuario(String nome, String email, String senha) {
+	super();
+	this.nome = nome;
+	this.email = email;
+	this.senha = senha;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public Usuario() {
+    }
 
-	public String getSenha() {
-		return senha;
-	}
+    public String getNome() {
+	return nome;
+    }
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+    public void setNome(String nome) {
+	this.nome = nome;
+    }
 
-	public List<Grupo> getGrupos() {
-		return grupos;
-	}
+    public String getEmail() {
+	return email;
+    }
 
-	public void setGrupos(List<Grupo> grupos) {
-		this.grupos = grupos;
-	}
+    public void setEmail(String email) {
+	this.email = email;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
+    public String getSenha() {
+	return senha;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
+    public void setSenha(String senha) {
+	this.senha = senha;
+    }
 
-	@Override
-	public String toString() {
-		return "Usuario [nome=" + nome + "]";
-	}
+    public List<Grupo> getGrupos() {
+	return grupos;
+    }
+
+    public void setGrupos(List<Grupo> grupos) {
+	this.grupos = grupos;
+    }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((id == null) ? 0 : id.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	Usuario other = (Usuario) obj;
+	if (id == null) {
+	    if (other.id != null)
+		return false;
+	} else if (!id.equals(other.id))
+	    return false;
+	return true;
+    }
+
+    @Override
+    public String toString() {
+	return "Usuario [nome=" + nome + "]";
+    }
 
 }

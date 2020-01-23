@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import com.algaworks.pedidovenda.enumeration.TipoPessoa;
 import com.algaworks.pedidovenda.model.Cliente;
 
 @ManagedBean
@@ -19,7 +20,7 @@ public class DialogBean {
 		this.clienteAdicionado = new Cliente();
 		this.clientes = new ArrayList<Cliente>();
 		
-		this.clientes.add(new Cliente("Teste 1", null, "390487968-57", null));
+		this.clientes.add(new Cliente(1l, "Teste 1", "teste@teste.com", "390487968-57", TipoPessoa.FISICA));
 	}
 
 	public void adicionar() {

@@ -32,7 +32,7 @@ public class Pedido implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data_criacao", nullable = false)
@@ -76,7 +76,7 @@ public class Pedido implements Serializable {
 	@Embedded
 	private EnderecoEntrega enderecoEntrega;
 
-	public Pedido(Integer id, Date dataCriacao, String observacao, Date dataEntrega, BigDecimal valorFrete,
+	public Pedido(Long id, Date dataCriacao, String observacao, Date dataEntrega, BigDecimal valorFrete,
 			BigDecimal valorDesconto, BigDecimal valorTotal, StatusPedido status, FormaPagamento formaPagamento,
 			Cliente cliente, Usuario vendedor, EnderecoEntrega enderecoEntrega) {
 		super();
@@ -98,11 +98,11 @@ public class Pedido implements Serializable {
 		super();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

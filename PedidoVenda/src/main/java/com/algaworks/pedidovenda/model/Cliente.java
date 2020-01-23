@@ -14,6 +14,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 import com.algaworks.pedidovenda.enumeration.TipoPessoa;
 
@@ -21,114 +26,122 @@ import com.algaworks.pedidovenda.enumeration.TipoPessoa;
 @Table(name = "cliente")
 public class Cliente implements Serializable {
 
-	private static final long serialVersionUID = 214124584609308286L;
+    private static final long serialVersionUID = 214124584609308286L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
-	@Column(nullable = false, length = 100)
-	private String nome;
-	
-	@Column(nullable = false, length = 255)
-	private String email;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "doc_receita_federal", nullable = false, length = 14)
-	private String documentoReceitaFederal;
-	private TipoPessoa tipo;
-	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-	private List<Endereco> enderecos = new ArrayList<Endereco>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Cliente(Integer id, String nome, String email, String documentoReceitaFederal, TipoPessoa tipo) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.documentoReceitaFederal = documentoReceitaFederal;
-		this.tipo = tipo;
-	}
-	
-	public Cliente() {}
+    @NotNull(message = "O nome deve ser informado")
+    @Column(nullable = false, length = 100)
+    private String nome;
 
-	public Integer getId() {
-		return id;
-	}
+    @NotNull
+    @Email
+    @Column(nullable = false, length = 255)
+    private String email;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @NotNull
+    @CNPJ
+    @Column(name = "doc_receita_federal", nullable = false, length = 14)
+    private String documentoReceitaFederal;
 
-	public String getNome() {
-		return nome;
-	}
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private TipoPessoa tipo;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Endereco> enderecos = new ArrayList<Endereco>();
 
-	public String getEmail() {
-		return email;
-	}
+    public Cliente(Long id, String nome, String email, String documentoReceitaFederal, TipoPessoa tipo) {
+	super();
+	this.id = id;
+	this.nome = nome;
+	this.email = email;
+	this.documentoReceitaFederal = documentoReceitaFederal;
+	this.tipo = tipo;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public Cliente() {
+    }
 
-	public String getDocumentoReceitaFederal() {
-		return documentoReceitaFederal;
-	}
+    public Long getId() {
+	return id;
+    }
 
-	public void setDocumentoReceitaFederal(String documentoReceitaFederal) {
-		this.documentoReceitaFederal = documentoReceitaFederal;
-	}
+    public void setId(Long id) {
+	this.id = id;
+    }
 
-	public TipoPessoa getTipo() {
-		return tipo;
-	}
+    public String getNome() {
+	return nome;
+    }
 
-	public void setTipo(TipoPessoa tipo) {
-		this.tipo = tipo;
-	}
+    public void setNome(String nome) {
+	this.nome = nome;
+    }
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
+    public String getEmail() {
+	return email;
+    }
 
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
+    public void setEmail(String email) {
+	this.email = email;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
+    public String getDocumentoReceitaFederal() {
+	return documentoReceitaFederal;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
+    public void setDocumentoReceitaFederal(String documentoReceitaFederal) {
+	this.documentoReceitaFederal = documentoReceitaFederal;
+    }
 
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + ", documentoReceitaFederal="
-				+ documentoReceitaFederal + ", tipo=" + tipo + ", enderecos=" + enderecos + "]";
-	}
+    public TipoPessoa getTipo() {
+	return tipo;
+    }
+
+    public void setTipo(TipoPessoa tipo) {
+	this.tipo = tipo;
+    }
+
+    public List<Endereco> getEnderecos() {
+	return enderecos;
+    }
+    
+    public void addEndereco(Endereco endereco) {
+	this.enderecos.add(endereco);
+    }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((id == null) ? 0 : id.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	Cliente other = (Cliente) obj;
+	if (id == null) {
+	    if (other.id != null)
+		return false;
+	} else if (!id.equals(other.id))
+	    return false;
+	return true;
+    }
+
+    @Override
+    public String toString() {
+	return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + ", documentoReceitaFederal=" + documentoReceitaFederal
+		+ ", tipo=" + tipo + ", enderecos=" + enderecos + "]";
+    }
 
 }
