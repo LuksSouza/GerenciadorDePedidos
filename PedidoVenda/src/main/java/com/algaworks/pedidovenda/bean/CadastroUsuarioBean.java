@@ -1,32 +1,36 @@
 package com.algaworks.pedidovenda.bean;
 
+import java.io.Serializable;
+
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.inject.Named;
 
-import com.algaworks.pedidovenda.enumeration.TipoPessoa;
-import com.algaworks.pedidovenda.model.Cliente;
-import com.algaworks.pedidovenda.model.Endereco;
 import com.algaworks.pedidovenda.model.Usuario;
-import com.algaworks.pedidovenda.service.NegocioException;
 
-@ManagedBean
-public class CadastroUsuarioBean {
+@Named
+@ViewScoped
+public class CadastroUsuarioBean implements Serializable {
 
-    private Usuario usuario;
+	private static final long serialVersionUID = 1L;
+	
+	private Usuario usuario;
 
-    @PostConstruct
-    public void init() {
-	this.usuario = new Usuario();
-    }
+	@PostConstruct
+	public void init() {
+		this.usuario = new Usuario();
+	}
 
-    public void salvar() {}
+	public void salvar() {
+		System.out.println("Salvar...");
+	}
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 }
