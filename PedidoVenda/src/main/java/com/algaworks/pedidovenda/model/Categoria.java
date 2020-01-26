@@ -33,7 +33,7 @@ public class Categoria implements Serializable {
 	private String descricao;
 
 	@ManyToOne
-	@JoinColumn(name = "categoria_pai_id", nullable = false)
+	@JoinColumn(name = "categoria_pai_id")
 	private Categoria categoriaPai;
 
 	@OneToMany(mappedBy = "categoriaPai", cascade = CascadeType.ALL)
