@@ -20,12 +20,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
-import com.algaworks.pedidovenda.enumeration.FormaPagamento;
-import com.algaworks.pedidovenda.enumeration.StatusPedido;
+import com.algaworks.pedidovenda.model.enumeration.FormaPagamento;
+import com.algaworks.pedidovenda.model.enumeration.StatusPedido;
 
 @Entity
-@Table(name = "PEDIDO")
+@Table(name = "pedido")
 public class Pedido implements Serializable {
 
 	private static final long serialVersionUID = -7116897665413086188L;
@@ -37,27 +38,27 @@ public class Pedido implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data_criacao", nullable = false)
 	private Date dataCriacao;
-	
+
 	@Column(columnDefinition = "text")
 	private String observacao;
 
 	@Temporal(TemporalType.TIME)
 	@Column(name = "data_entrega", nullable = false)
 	private Date dataEntrega;
-	
-	@Column(name = "valor_frete" ,nullable = false, precision = 10, scale = 2)
+
+	@Column(name = "valor_frete", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorFrete;
-	
-	@Column(name = "valor_desconto" ,nullable = false, precision = 10, scale = 2)
+
+	@Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorDesconto;
-	
-	@Column(name = "valor_total" ,nullable = false, precision = 10, scale = 2)
+
+	@Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorTotal;
-	
+
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 20)
 	private StatusPedido status;
-	
+
 	@Enumerated(EnumType.STRING)
 	@Column(name = "forma_pagamento", nullable = false, length = 20)
 	private FormaPagamento formaPagamento;

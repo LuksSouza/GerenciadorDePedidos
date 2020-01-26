@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name = "grupo")
 public class Grupo implements Serializable {
@@ -18,10 +20,12 @@ public class Grupo implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@NotBlank
 	@Column(nullable = false, length = 40)
 	private String nome;
-	
+
+	@NotBlank
 	@Column(nullable = false, length = 80)
 	private String descricao;
 

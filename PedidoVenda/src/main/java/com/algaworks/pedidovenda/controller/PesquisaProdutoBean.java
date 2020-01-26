@@ -1,4 +1,4 @@
-package com.algaworks.pedidovenda.bean;
+package com.algaworks.pedidovenda.controller;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

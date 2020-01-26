@@ -11,6 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+import com.algaworks.pedidovenda.validation.SKU;
 
 @Entity
 @Table(name = "produto")
@@ -22,15 +28,20 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank
 	@Column(nullable = false, length = 80)
 	private String nome;
 
+	@NotBlank
+	@SKU
 	@Column(nullable = false, length = 20, unique = true)
 	private String sku;
 
+	@NotBlank
 	@Column(name = "valor_unitario", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorUnitario;
 
+	@NotNull
 	@Column(name = "quantidade_estoque", nullable = false, length = 5)
 	private Integer quantidadeEstoque;
 

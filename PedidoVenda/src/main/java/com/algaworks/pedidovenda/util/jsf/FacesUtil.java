@@ -1,4 +1,4 @@
-package com.algaworks.pedidovenda.util;
+package com.algaworks.pedidovenda.util.jsf;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

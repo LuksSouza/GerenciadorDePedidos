@@ -1,4 +1,4 @@
-package com.algaworks.pedidovenda.bean;
+package com.algaworks.pedidovenda.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import com.algaworks.pedidovenda.enumeration.TipoPessoa;
 import com.algaworks.pedidovenda.model.Cliente;
+import com.algaworks.pedidovenda.model.enumeration.TipoPessoa;
 
 @ManagedBean
 public class DialogBean {

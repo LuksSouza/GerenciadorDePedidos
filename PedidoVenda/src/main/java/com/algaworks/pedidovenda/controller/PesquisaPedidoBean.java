@@ -1,4 +1,4 @@
-package com.algaworks.pedidovenda.bean;
+package com.algaworks.pedidovenda.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import com.algaworks.pedidovenda.enumeration.StatusPedido;
 import com.algaworks.pedidovenda.model.Pedido;
+import com.algaworks.pedidovenda.model.enumeration.StatusPedido;
 
 @ManagedBean
 public class PesquisaPedidoBean {
