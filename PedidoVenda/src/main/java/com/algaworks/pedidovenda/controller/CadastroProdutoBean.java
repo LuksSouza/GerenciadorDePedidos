@@ -8,7 +8,6 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
 
 import com.algaworks.pedidovenda.model.Categoria;
 import com.algaworks.pedidovenda.model.Produto;
@@ -25,6 +24,7 @@ public class CadastroProdutoBean implements Serializable {
 
 	private Produto produto;
 	private List<Categoria> categorias;
+	private Categoria categoriaPai;
 
 	@PostConstruct
 	public void init() {
@@ -37,7 +37,7 @@ public class CadastroProdutoBean implements Serializable {
 	}
 
 	public void salvar() {
-		System.out.println("Salvando...");
+		System.out.println("Recebendo categoria pai: "+this.categoriaPai.getDescricao());
 	}
 
 	public Produto getProduto() {
@@ -50,6 +50,14 @@ public class CadastroProdutoBean implements Serializable {
 
 	public List<Categoria> getCategorias() {
 		return categorias;
+	}
+
+	public Categoria getCategoriaPai() {
+		return categoriaPai;
+	}
+
+	public void setCategoriaPai(Categoria categoriaPai) {
+		this.categoriaPai = categoriaPai;
 	}
 
 }
