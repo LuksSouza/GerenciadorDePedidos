@@ -27,7 +27,7 @@ public class TestPopulaBancoDados {
 		this.em.createNativeQuery("insert into categoria (descricao) values('Tablets')").executeUpdate();
 		this.em.createNativeQuery("insert into categoria (descricao) values('Monitores')").executeUpdate();
 		this.em.createNativeQuery("insert into categoria (descricao) values('Impressoras')").executeUpdate();
-		this.em.createNativeQuery("insert into categoria (descricao) values('Acessŕios')").executeUpdate();
+		this.em.createNativeQuery("insert into categoria (descricao) values('Acessorios')").executeUpdate();
 		
 		this.em.getTransaction().commit();
 		

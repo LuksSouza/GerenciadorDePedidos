@@ -1,0 +1,40 @@
+2020-01-23 12:53:08,559 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-23 12:53:08,579 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-23 12:53:08,621 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-23 12:53:09,064 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-23 12:53:09,174 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-23 12:53:09,174 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-23 12:53:09,455 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-23 12:53:10,208 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-23 12:53:10,210 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-23 12:53:11,123 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.3.1.Final
+2020-01-23 13:02:52,022 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-23 13:02:52,064 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-23 13:02:52,099 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-23 13:02:52,519 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-23 13:02:52,636 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-23 13:02:52,636 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-23 13:02:52,835 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-23 13:02:53,452 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-23 13:02:53,453 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-23 13:02:54,260 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.3.1.Final
+2020-01-23 13:06:35,191 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-23 13:06:35,206 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-23 13:06:35,227 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-23 13:06:35,381 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-23 13:06:35,450 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-23 13:06:35,450 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-23 13:06:35,615 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-23 13:06:36,028 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-23 13:06:36,028 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-23 13:06:36,627 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.3.1.Final
+2020-01-23 13:13:39,374 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-23 13:13:39,392 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-23 13:13:39,428 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-23 13:13:39,688 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-23 13:13:39,909 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-23 13:13:39,910 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-23 13:13:40,245 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-23 13:13:40,926 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-23 13:13:40,928 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-23 13:13:42,025 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.3.1.Final

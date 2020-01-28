@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 
 import com.algaworks.pedidovenda.model.Categoria;
 import com.algaworks.pedidovenda.model.Produto;
+import com.algaworks.pedidovenda.repository.Categorias;
 
 @Named
 @ViewScoped
@@ -20,21 +21,21 @@ public class CadastroProdutoBean implements Serializable {
 	private static final long serialVersionUID = 8108185350428411119L;
 
 	@Inject
-	private EntityManager entityManager;
-	
+	private Categorias categoriasRepository;
+
 	private Produto produto;
 	private List<Categoria> categorias;
-	
+
 	@PostConstruct
 	public void init() {
 		this.produto = new Produto();
 	}
-	
+
 	public void carregaObjetosDaTela(ComponentSystemEvent event) {
 		System.out.println("Inicializando...");
-		this.categorias = entityManager.createQuery("from Categoria", Categoria.class).getResultList();
+		this.categorias = categoriasRepository.raizes();
 	}
-	
+
 	public void salvar() {
 		System.out.println("Salvando...");
 	}
