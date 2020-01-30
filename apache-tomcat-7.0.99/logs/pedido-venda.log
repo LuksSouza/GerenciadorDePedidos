@@ -590,3 +590,399 @@ javax.faces.FacesException: Cannot find component with expression "subcategoria"
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
+2020-01-30 20:36:41,434 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-30 20:36:41,518 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-30 20:36:41,547 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-30 20:36:41,771 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-30 20:36:41,838 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-30 20:36:41,838 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-30 20:36:42,100 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-30 20:36:42,547 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-30 20:36:43,253 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.4.0.Final
+2020-01-30 20:36:43,788 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-30 20:38:28,781 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2020-01-30 20:38:28,788 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2020-01-30 20:38:28,791 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2020-01-30 20:38:28,793 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2020-01-30 20:38:29,244 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2020-01-30 20:38:29,247 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2020-01-30 20:38:29,248 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2020-01-30 20:38:29,248 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/cursojavaee]
+2020-01-30 20:38:29,248 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2020-01-30 20:38:29,973 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-30 20:38:30,227 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2020-01-30 20:38:30,232 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2020-01-30 20:38:30,655 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000228: Running hbm2ddl schema update
+2020-01-30 20:38:30,655 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000102: Fetching database metadata
+2020-01-30 20:38:30,656 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000396: Updating schema
+2020-01-30 20:38:30,700 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.categoria
+2020-01-30 20:38:30,700 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, categoria_pai_id, descricao]
+2020-01-30 20:38:30,701 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_fkuqkgkisyom8dxthrqo1ttix]
+2020-01-30 20:38:30,701 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_fkuqkgkisyom8dxthrqo1ttix, primary]
+2020-01-30 20:38:30,712 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.cliente
+2020-01-30 20:38:30,712 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, email, tipo, nome, doc_receita_federal]
+2020-01-30 20:38:30,712 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 20:38:30,712 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-30 20:38:30,749 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.endereco
+2020-01-30 20:38:30,749 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, cidade, complemento, cep, cliente_id, uf, logradouro, numero]
+2020-01-30 20:38:30,750 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_5hhg2rsvgex3ulsdy1svy8s62]
+2020-01-30 20:38:30,750 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_5hhg2rsvgex3ulsdy1svy8s62, primary]
+2020-01-30 20:38:30,769 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.grupo
+2020-01-30 20:38:30,769 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, nome, descricao]
+2020-01-30 20:38:30,769 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 20:38:30,769 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-30 20:38:30,782 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.item_pedido
+2020-01-30 20:38:30,782 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, quantidade, pedido_id, valor_unitario, produto_id]
+2020-01-30 20:38:30,782 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v]
+2020-01-30 20:38:30,782 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v, primary]
+2020-01-30 20:38:30,793 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.pedido
+2020-01-30 20:38:30,793 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [entrega_uf, status, valor_desconto, valor_frete, vendedor_id, data_entrega, observacao, entrega_cep, id, entrega_numero, forma_pagamento, entrega_cidade, cliente_id, data_criacao, entrega_logradouro, valor_total, entrega_complemento]
+2020-01-30 20:38:30,793 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_k1yq38ro8cntr2av6fllk3xwt, fk_jvfwgjbqjdp5sk1qto0trgpla]
+2020-01-30 20:38:30,793 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_k1yq38ro8cntr2av6fllk3xwt, fk_jvfwgjbqjdp5sk1qto0trgpla, primary]
+2020-01-30 20:38:30,819 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.produto
+2020-01-30 20:38:30,819 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, nome, sku, categoria_id, valor_unitario, quantidade_estoque]
+2020-01-30 20:38:30,819 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_el0d58htywfs914w4grf6aoa0]
+2020-01-30 20:38:30,819 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [uk_j6npst3feop938l4x5h675kyv, primary, fk_el0d58htywfs914w4grf6aoa0]
+2020-01-30 20:38:30,827 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario
+2020-01-30 20:38:30,827 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, email, nome, senha]
+2020-01-30 20:38:30,827 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 20:38:30,827 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary, uk_5171l57faosmj8myawaucatdw]
+2020-01-30 20:38:30,863 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario_grupo
+2020-01-30 20:38:30,863 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [usuario_id, grupo_id]
+2020-01-30 20:38:30,864 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-30 20:38:30,864 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-30 20:38:30,868 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000232: Schema update complete
+2020-01-30 20:38:31,212 ERROR [com.algaworks.pedidovenda.util.jsf.JsfExceptionHandler] Erro de sistema: Cannot find component with expression "subcategoria" referenced from "j_idt34:categoria".
+javax.faces.FacesException: Cannot find component with expression "subcategoria" referenced from "j_idt34:categoria".
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentInternal(SearchExpressionFacade.java:435)
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentForClient(SearchExpressionFacade.java:220)
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentsForClient(SearchExpressionFacade.java:130)
+	at org.primefaces.util.AjaxRequestBuilder.addExpressions(AjaxRequestBuilder.java:87)
+	at org.primefaces.util.AjaxRequestBuilder.update(AjaxRequestBuilder.java:80)
+	at org.primefaces.component.behavior.ajax.AjaxBehaviorRenderer.getScript(AjaxBehaviorRenderer.java:64)
+	at javax.faces.component.behavior.ClientBehaviorBase.getScript(ClientBehaviorBase.java:103)
+	at org.primefaces.renderkit.CoreRenderer.encodeClientBehaviors(CoreRenderer.java:306)
+	at org.primefaces.component.selectonemenu.SelectOneMenuRenderer.encodeScript(SelectOneMenuRenderer.java:324)
+	at org.primefaces.component.selectonemenu.SelectOneMenuRenderer.encodeEnd(SelectOneMenuRenderer.java:66)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeDynamicBody(PanelGridRenderer.java:92)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeBody(PanelGridRenderer.java:60)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeEnd(PanelGridRenderer.java:49)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at javax.faces.render.Renderer.encodeChildren(Renderer.java:168)
+	at javax.faces.component.UIComponentBase.encodeChildren(UIComponentBase.java:851)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1779)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.renderView(FaceletViewHandlingStrategy.java:439)
+	at com.sun.faces.application.view.MultiViewHandler.renderView(MultiViewHandler.java:124)
+	at javax.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:286)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:139)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:594)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:165)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1195)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:654)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-01-30 20:41:25,779 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-30 20:41:25,791 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-30 20:41:25,809 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-30 20:41:25,954 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-30 20:41:26,007 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-30 20:41:26,008 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-30 20:41:26,154 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-30 20:41:26,423 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-30 20:41:26,744 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.4.0.Final
+2020-01-30 20:41:27,050 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-30 20:45:43,824 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-30 20:45:43,840 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-30 20:45:43,869 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-30 20:45:44,101 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-30 20:45:44,162 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-30 20:45:44,163 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-30 20:45:44,353 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-30 20:45:44,651 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-30 20:45:45,165 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.4.0.Final
+2020-01-30 20:45:45,678 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-30 20:45:59,532 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2020-01-30 20:45:59,541 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2020-01-30 20:45:59,544 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2020-01-30 20:45:59,546 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2020-01-30 20:45:59,767 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2020-01-30 20:45:59,770 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2020-01-30 20:45:59,771 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2020-01-30 20:45:59,771 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/cursojavaee]
+2020-01-30 20:45:59,771 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2020-01-30 20:46:00,036 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-30 20:46:00,223 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2020-01-30 20:46:00,230 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2020-01-30 20:46:00,620 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000228: Running hbm2ddl schema update
+2020-01-30 20:46:00,620 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000102: Fetching database metadata
+2020-01-30 20:46:00,622 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000396: Updating schema
+2020-01-30 20:46:00,646 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.categoria
+2020-01-30 20:46:00,646 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, categoria_pai_id, descricao]
+2020-01-30 20:46:00,646 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_fkuqkgkisyom8dxthrqo1ttix]
+2020-01-30 20:46:00,646 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_fkuqkgkisyom8dxthrqo1ttix, primary]
+2020-01-30 20:46:00,653 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.cliente
+2020-01-30 20:46:00,653 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, email, tipo, nome, doc_receita_federal]
+2020-01-30 20:46:00,653 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 20:46:00,653 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-30 20:46:00,663 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.endereco
+2020-01-30 20:46:00,663 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, cidade, complemento, cep, cliente_id, uf, logradouro, numero]
+2020-01-30 20:46:00,663 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_5hhg2rsvgex3ulsdy1svy8s62]
+2020-01-30 20:46:00,663 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_5hhg2rsvgex3ulsdy1svy8s62, primary]
+2020-01-30 20:46:00,668 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.grupo
+2020-01-30 20:46:00,668 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, nome, descricao]
+2020-01-30 20:46:00,669 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 20:46:00,669 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-30 20:46:00,678 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.item_pedido
+2020-01-30 20:46:00,678 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, quantidade, pedido_id, valor_unitario, produto_id]
+2020-01-30 20:46:00,679 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v]
+2020-01-30 20:46:00,679 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v, primary]
+2020-01-30 20:46:00,691 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.pedido
+2020-01-30 20:46:00,691 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [entrega_uf, status, valor_desconto, valor_frete, vendedor_id, data_entrega, observacao, entrega_cep, id, entrega_numero, forma_pagamento, entrega_cidade, cliente_id, data_criacao, entrega_logradouro, valor_total, entrega_complemento]
+2020-01-30 20:46:00,691 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_k1yq38ro8cntr2av6fllk3xwt, fk_jvfwgjbqjdp5sk1qto0trgpla]
+2020-01-30 20:46:00,691 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_k1yq38ro8cntr2av6fllk3xwt, fk_jvfwgjbqjdp5sk1qto0trgpla, primary]
+2020-01-30 20:46:00,698 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.produto
+2020-01-30 20:46:00,698 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, nome, sku, categoria_id, valor_unitario, quantidade_estoque]
+2020-01-30 20:46:00,699 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_el0d58htywfs914w4grf6aoa0]
+2020-01-30 20:46:00,699 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [uk_j6npst3feop938l4x5h675kyv, primary, fk_el0d58htywfs914w4grf6aoa0]
+2020-01-30 20:46:00,704 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario
+2020-01-30 20:46:00,704 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, email, nome, senha]
+2020-01-30 20:46:00,704 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 20:46:00,704 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary, uk_5171l57faosmj8myawaucatdw]
+2020-01-30 20:46:00,710 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario_grupo
+2020-01-30 20:46:00,710 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [usuario_id, grupo_id]
+2020-01-30 20:46:00,710 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-30 20:46:00,710 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-30 20:46:00,712 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000232: Schema update complete
+2020-01-30 20:46:01,050 ERROR [com.algaworks.pedidovenda.util.jsf.JsfExceptionHandler] Erro de sistema: Cannot find component with expression "subcategoria" referenced from "j_idt34:categoria".
+javax.faces.FacesException: Cannot find component with expression "subcategoria" referenced from "j_idt34:categoria".
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentInternal(SearchExpressionFacade.java:435)
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentForClient(SearchExpressionFacade.java:220)
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentsForClient(SearchExpressionFacade.java:130)
+	at org.primefaces.util.AjaxRequestBuilder.addExpressions(AjaxRequestBuilder.java:87)
+	at org.primefaces.util.AjaxRequestBuilder.update(AjaxRequestBuilder.java:80)
+	at org.primefaces.component.behavior.ajax.AjaxBehaviorRenderer.getScript(AjaxBehaviorRenderer.java:64)
+	at javax.faces.component.behavior.ClientBehaviorBase.getScript(ClientBehaviorBase.java:103)
+	at org.primefaces.renderkit.CoreRenderer.encodeClientBehaviors(CoreRenderer.java:306)
+	at org.primefaces.component.selectonemenu.SelectOneMenuRenderer.encodeScript(SelectOneMenuRenderer.java:324)
+	at org.primefaces.component.selectonemenu.SelectOneMenuRenderer.encodeEnd(SelectOneMenuRenderer.java:66)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeDynamicBody(PanelGridRenderer.java:92)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeBody(PanelGridRenderer.java:60)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeEnd(PanelGridRenderer.java:49)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at javax.faces.render.Renderer.encodeChildren(Renderer.java:168)
+	at javax.faces.component.UIComponentBase.encodeChildren(UIComponentBase.java:851)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1779)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.renderView(FaceletViewHandlingStrategy.java:439)
+	at com.sun.faces.application.view.MultiViewHandler.renderView(MultiViewHandler.java:124)
+	at javax.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:286)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:139)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:594)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:165)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1195)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:654)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-01-30 20:47:08,202 ERROR [com.algaworks.pedidovenda.util.jsf.JsfExceptionHandler] Erro de sistema: Cannot find component with expression "subCategoria" referenced from "j_idt34:j_idt47".
+javax.faces.FacesException: Cannot find component with expression "subCategoria" referenced from "j_idt34:j_idt47".
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentInternal(SearchExpressionFacade.java:435)
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponent(SearchExpressionFacade.java:284)
+	at org.primefaces.component.outputlabel.OutputLabelRenderer.encodeEnd(OutputLabelRenderer.java:47)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeDynamicBody(PanelGridRenderer.java:92)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeBody(PanelGridRenderer.java:60)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeEnd(PanelGridRenderer.java:49)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at javax.faces.render.Renderer.encodeChildren(Renderer.java:168)
+	at javax.faces.component.UIComponentBase.encodeChildren(UIComponentBase.java:851)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1779)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.renderView(FaceletViewHandlingStrategy.java:439)
+	at com.sun.faces.application.view.MultiViewHandler.renderView(MultiViewHandler.java:124)
+	at javax.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:286)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:139)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:594)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:165)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1195)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:654)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-01-30 20:47:22,948 ERROR [com.algaworks.pedidovenda.util.jsf.JsfExceptionHandler] Erro de sistema: Cannot find component with expression "subCategoria" referenced from "j_idt34:j_idt47".
+javax.faces.FacesException: Cannot find component with expression "subCategoria" referenced from "j_idt34:j_idt47".
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponentInternal(SearchExpressionFacade.java:435)
+	at org.primefaces.expression.SearchExpressionFacade.resolveComponent(SearchExpressionFacade.java:284)
+	at org.primefaces.component.outputlabel.OutputLabelRenderer.encodeEnd(OutputLabelRenderer.java:47)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeDynamicBody(PanelGridRenderer.java:92)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeBody(PanelGridRenderer.java:60)
+	at org.primefaces.component.panelgrid.PanelGridRenderer.encodeEnd(PanelGridRenderer.java:49)
+	at javax.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:881)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1786)
+	at javax.faces.render.Renderer.encodeChildren(Renderer.java:168)
+	at javax.faces.component.UIComponentBase.encodeChildren(UIComponentBase.java:851)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1779)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at javax.faces.component.UIComponent.encodeAll(UIComponent.java:1782)
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.renderView(FaceletViewHandlingStrategy.java:439)
+	at com.sun.faces.application.view.MultiViewHandler.renderView(MultiViewHandler.java:124)
+	at javax.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:286)
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:120)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:139)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:594)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:165)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:452)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1195)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:654)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-01-30 21:11:58,408 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-30 21:11:58,426 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-30 21:11:58,453 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-30 21:11:58,621 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-30 21:11:58,674 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-30 21:11:58,674 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-30 21:11:58,842 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-30 21:11:59,124 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-30 21:11:59,453 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.4.0.Final
+2020-01-30 21:11:59,750 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-30 21:16:08,555 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-30 21:16:08,573 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-30 21:16:08,607 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-30 21:16:08,860 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-30 21:16:08,927 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-30 21:16:08,927 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-30 21:16:09,140 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-30 21:16:09,488 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-30 21:16:10,071 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.4.0.Final
+2020-01-30 21:16:10,548 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-30 21:16:33,985 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2020-01-30 21:16:33,991 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2020-01-30 21:16:33,993 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2020-01-30 21:16:33,995 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2020-01-30 21:16:34,201 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2020-01-30 21:16:34,204 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2020-01-30 21:16:34,204 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2020-01-30 21:16:34,205 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/cursojavaee]
+2020-01-30 21:16:34,205 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2020-01-30 21:16:34,478 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-30 21:16:34,675 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2020-01-30 21:16:34,680 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2020-01-30 21:16:35,098 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000228: Running hbm2ddl schema update
+2020-01-30 21:16:35,098 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000102: Fetching database metadata
+2020-01-30 21:16:35,099 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000396: Updating schema
+2020-01-30 21:16:35,119 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.categoria
+2020-01-30 21:16:35,119 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, categoria_pai_id, descricao]
+2020-01-30 21:16:35,120 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_fkuqkgkisyom8dxthrqo1ttix]
+2020-01-30 21:16:35,120 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_fkuqkgkisyom8dxthrqo1ttix, primary]
+2020-01-30 21:16:35,126 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.cliente
+2020-01-30 21:16:35,126 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, email, tipo, nome, doc_receita_federal]
+2020-01-30 21:16:35,126 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 21:16:35,126 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-30 21:16:35,134 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.endereco
+2020-01-30 21:16:35,134 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, cidade, complemento, cep, cliente_id, uf, logradouro, numero]
+2020-01-30 21:16:35,134 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_5hhg2rsvgex3ulsdy1svy8s62]
+2020-01-30 21:16:35,134 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_5hhg2rsvgex3ulsdy1svy8s62, primary]
+2020-01-30 21:16:35,139 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.grupo
+2020-01-30 21:16:35,139 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, nome, descricao]
+2020-01-30 21:16:35,139 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 21:16:35,140 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-30 21:16:35,146 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.item_pedido
+2020-01-30 21:16:35,146 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, quantidade, pedido_id, valor_unitario, produto_id]
+2020-01-30 21:16:35,146 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v]
+2020-01-30 21:16:35,146 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v, primary]
+2020-01-30 21:16:35,157 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.pedido
+2020-01-30 21:16:35,157 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [entrega_uf, status, valor_desconto, valor_frete, vendedor_id, data_entrega, observacao, entrega_cep, id, entrega_numero, forma_pagamento, entrega_cidade, cliente_id, data_criacao, entrega_logradouro, valor_total, entrega_complemento]
+2020-01-30 21:16:35,157 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_k1yq38ro8cntr2av6fllk3xwt, fk_jvfwgjbqjdp5sk1qto0trgpla]
+2020-01-30 21:16:35,157 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_k1yq38ro8cntr2av6fllk3xwt, fk_jvfwgjbqjdp5sk1qto0trgpla, primary]
+2020-01-30 21:16:35,164 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.produto
+2020-01-30 21:16:35,164 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, nome, sku, categoria_id, valor_unitario, quantidade_estoque]
+2020-01-30 21:16:35,164 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_el0d58htywfs914w4grf6aoa0]
+2020-01-30 21:16:35,164 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [uk_j6npst3feop938l4x5h675kyv, primary, fk_el0d58htywfs914w4grf6aoa0]
+2020-01-30 21:16:35,170 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario
+2020-01-30 21:16:35,170 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, email, nome, senha]
+2020-01-30 21:16:35,170 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-30 21:16:35,170 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary, uk_5171l57faosmj8myawaucatdw]
+2020-01-30 21:16:35,176 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario_grupo
+2020-01-30 21:16:35,177 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [usuario_id, grupo_id]
+2020-01-30 21:16:35,177 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-30 21:16:35,177 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-30 21:16:35,178 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000232: Schema update complete

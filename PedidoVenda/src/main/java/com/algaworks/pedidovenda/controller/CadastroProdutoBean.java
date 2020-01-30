@@ -12,6 +12,7 @@ import javax.inject.Named;
 import com.algaworks.pedidovenda.model.Categoria;
 import com.algaworks.pedidovenda.model.Produto;
 import com.algaworks.pedidovenda.repository.Categorias;
+import com.algaworks.pedidovenda.util.jsf.FacesUtil;
 
 @Named
 @ViewScoped
@@ -25,7 +26,7 @@ public class CadastroProdutoBean implements Serializable {
 	private Produto produto;
 	private List<Categoria> categorias;
 	private Categoria categoriaPai;
-	private List<Categoria> subCategorias;
+	private List<Categoria> subcategorias;
 
 	@PostConstruct
 	public void init() {
@@ -33,12 +34,13 @@ public class CadastroProdutoBean implements Serializable {
 	}
 
 	public void carregaObjetosDaTela(ComponentSystemEvent event) {
-		System.out.println("Inicializando...");
-		this.categorias = categoriasRepository.raizes();
+		if (FacesUtil.isNotPostback()) {
+			this.categorias = categoriasRepository.raizes();
+		}
 	}
 	
 	public void carregarSubcategorias() {
-		this.subCategorias = categoriasRepository.subcategoriasDe(this.categoriaPai);
+		this.subcategorias = categoriasRepository.subcategoriasDe(this.categoriaPai);
 	}
 
 	public void salvar() {
@@ -63,6 +65,10 @@ public class CadastroProdutoBean implements Serializable {
 
 	public void setCategoriaPai(Categoria categoriaPai) {
 		this.categoriaPai = categoriaPai;
+	}
+
+	public List<Categoria> getSubcategorias() {
+		return subcategorias;
 	}
 
 }
