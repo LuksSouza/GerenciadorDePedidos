@@ -8,12 +8,16 @@ import javax.inject.Inject;
 
 import com.algaworks.pedidovenda.model.Categoria;
 import com.algaworks.pedidovenda.repository.Categorias;
+import com.algaworks.pedidovenda.util.cdi.CDIServiceLocator;
 
 @FacesConverter(forClass = Categoria.class)
 public class CategoriaConverter implements Converter {
 
-	@Inject
 	private Categorias categorias;
+	
+	public CategoriaConverter() {
+		this.categorias = CDIServiceLocator.getBean(Categorias.class);
+	}
 	
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {

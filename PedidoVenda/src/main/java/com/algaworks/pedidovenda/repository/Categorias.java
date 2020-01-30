@@ -16,11 +16,17 @@ public class Categorias implements Serializable {
 	private EntityManager entityManager;
 
 	public List<Categoria> raizes() {
-		return entityManager.createQuery("from Categoria", Categoria.class).getResultList();
+		return entityManager.createQuery("from Categoria where categoriaPai is null", Categoria.class).getResultList();
 	}
 
 	public Categoria porId(long id) {
 		return entityManager.find(Categoria.class, id);
+	}
+
+	public List<Categoria> subcategoriasDe(Categoria categoriaPai) {
+		return entityManager.createQuery("from Categoria where categoriaPai is :raiz", Categoria.class)
+				.setParameter("raiz", categoriaPai)
+				.getResultList();
 	}
 
 }

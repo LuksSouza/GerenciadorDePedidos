@@ -12,7 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -29,6 +32,7 @@ public class Produto implements Serializable {
 	private Long id;
 
 	@NotBlank
+	@Size(max = 80)
 	@Column(nullable = false, length = 80)
 	private String nome;
 
@@ -37,14 +41,15 @@ public class Produto implements Serializable {
 	@Column(nullable = false, length = 20, unique = true)
 	private String sku;
 
-	@NotBlank
+	@NotNull(message = "é obrigatório")
 	@Column(name = "valor_unitario", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorUnitario;
 
-	@NotNull
+	@NotNull @Min(0) @Max(value = 9999, message = "tem um valor muito alto")
 	@Column(name = "quantidade_estoque", nullable = false, length = 5)
 	private Integer quantidadeEstoque;
 
+	//@NotNull
 	@ManyToOne
 	@JoinColumn(name = "categoria_id", nullable = false)
 	private Categoria categoria;

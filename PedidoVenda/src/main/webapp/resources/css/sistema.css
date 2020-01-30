@@ -73,11 +73,6 @@ h1 {
 	padding: 0px !important;
 }
 
-.ui-selectoneradio td {
-	border-width: 0px !important;
-	padding: 0px !important;
-}
-
 .ui-selectmanycheckbox td label {
 	padding-right: 10px;
 }
@@ -111,7 +106,7 @@ h1 {
     background: none !important;
 }
 
-.menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > ul > .ui-menuitem-text {
+.menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
     color: #ffffff !important;
 }
 

@@ -25,6 +25,7 @@ public class CadastroProdutoBean implements Serializable {
 	private Produto produto;
 	private List<Categoria> categorias;
 	private Categoria categoriaPai;
+	private List<Categoria> subCategorias;
 
 	@PostConstruct
 	public void init() {
@@ -34,6 +35,10 @@ public class CadastroProdutoBean implements Serializable {
 	public void carregaObjetosDaTela(ComponentSystemEvent event) {
 		System.out.println("Inicializando...");
 		this.categorias = categoriasRepository.raizes();
+	}
+	
+	public void carregarSubcategorias() {
+		this.subCategorias = categoriasRepository.subcategoriasDe(this.categoriaPai);
 	}
 
 	public void salvar() {
