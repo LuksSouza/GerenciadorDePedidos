@@ -1,41 +1,47 @@
 package com.algaworks.pedidovenda.controller;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
 
 import com.algaworks.pedidovenda.model.Produto;
+import com.algaworks.pedidovenda.repository.Produtos;
+import com.algaworks.pedidovenda.repository.filter.ProdutoFilter;
 
 @ManagedBean
 public class PesquisaProdutoBean {
 
-    private List<Produto> produtos;
+	@Inject
+	private Produtos produtos;
+	
+	private ProdutoFilter filtro;
+	private List<Produto> produtosFiltrados;
     private Produto produtoSelecionado;
 
-    @PostConstruct
-    private void init() {
-        produtos = new ArrayList<Produto>();
-
-        for (int i = 0; i < 20; i++) {
-            this.produtos.add(new Produto(new Long(i), "Bala de morango" + i, "sku", new BigDecimal(1.50), 98, null));
-        }
+    public PesquisaProdutoBean() {
+    	this.filtro = new ProdutoFilter();
     }
 
+    public void pesquisar() {
+    	this.produtosFiltrados = this.produtos.filtrados(filtro);
+    }
+    
     public void excluir() {
-        this.produtos.remove(this.produtoSelecionado);
+        this.produtosFiltrados.remove(this.produtoSelecionado);
         this.produtoSelecionado = null;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
+    public List<Produto> getProdutosFiltrados() {
+        return this.produtosFiltrados;
     }
 
     public void setProdutoSelecionado(Produto produtoSelecionado) {
         this.produtoSelecionado = produtoSelecionado;
-        System.out.println(this.produtoSelecionado.getNome());
     }
 
+	public ProdutoFilter getFiltro() {
+		return filtro;
+	}
+    
 }

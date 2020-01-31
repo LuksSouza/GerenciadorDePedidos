@@ -13,7 +13,7 @@
 	
 			<p:toolbar style="margin-top: 20px">
 				<p:toolbarGroup>
-					<p:commandButton value="Pesquisar" />
+					<p:commandButton value="Pesquisar" action="#{pesquisaProdutoBean.pesquisar}" update="@form" />
 				</p:toolbarGroup>
 				<p:toolbarGroup align="right">
 					<p:button value="Novo" outcome="/produtos/CadastroProduto" />
@@ -22,14 +22,14 @@
 	
 			<p:panelGrid columns="2" id="painel"
 				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
-				<p:outputLabel value="SKU" for="sku" />
+				<p:outputLabel value="#{pesquisaProdutoBean.filtro.sku}" for="sku" />
 				<p:inputText id="sku" size="20" />
 	
-				<p:outputLabel value="Nome" for="nome" />
+				<p:outputLabel value="#{pesquisaProdutoBean.filtro.nome}" for="nome" />
 				<p:inputText id="nome" size="60" />
 			</p:panelGrid>
 	
-			<p:dataTable id="tableProduto" var="produto" value="#{pesquisaProdutoBean.produtos}"
+			<p:dataTable id="tableProduto" var="produto" value="#{pesquisaProdutoBean.produtosFiltrados}"
 				style="margin-top: 20px" emptyMessage="Nenhum produto encontrado." 
 				paginator="true" rows="10" paginatorPosition="bottom" paginatorAlwaysVisible="false">
 	

@@ -1,0 +1,62 @@
+2020-01-28 13:36:03,033 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+2020-01-28 13:36:03,051 INFO  [org.jboss.weld.Version] WELD-000900: 2.2.9 (Final)
+2020-01-28 13:36:03,079 INFO  [org.jboss.weld.Bootstrap] WELD-ENV-000020: Using jandex for bean discovery
+2020-01-28 13:36:03,397 INFO  [org.jboss.weld.Bootstrap] WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+2020-01-28 13:36:03,632 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
+2020-01-28 13:36:03,633 WARN  [org.jboss.weld.Interceptor] WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
+2020-01-28 13:36:03,995 INFO  [org.jboss.weld.environment.servletTomcat] WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+2020-01-28 13:36:04,681 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used for ServletContext notifications
+2020-01-28 13:36:04,682 INFO  [org.jboss.weld.environment.servletWeldServlet] WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+2020-01-28 13:36:05,382 INFO  [org.hibernate.validator.internal.util.Version] HV000001: Hibernate Validator 5.4.0.Final
+2020-01-28 13:36:14,172 INFO  [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2020-01-28 13:36:14,180 INFO  [org.hibernate.Version] HHH000412: Hibernate Core {4.2.3.Final}
+2020-01-28 13:36:14,202 INFO  [org.hibernate.cfg.Environment] HHH000206: hibernate.properties not found
+2020-01-28 13:36:14,204 INFO  [org.hibernate.cfg.Environment] HHH000021: Bytecode provider name : javassist
+2020-01-28 13:36:14,654 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2020-01-28 13:36:14,704 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000115: Hibernate connection pool size: 20
+2020-01-28 13:36:14,704 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000006: Autocommit mode: true
+2020-01-28 13:36:14,704 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/cursojavaee]
+2020-01-28 13:36:14,705 INFO  [org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl] HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+2020-01-28 13:36:15,675 INFO  [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-28 13:36:16,067 INFO  [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2020-01-28 13:36:16,074 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2020-01-28 13:36:17,342 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000228: Running hbm2ddl schema update
+2020-01-28 13:36:17,343 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000102: Fetching database metadata
+2020-01-28 13:36:17,351 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000396: Updating schema
+2020-01-28 13:36:17,418 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.categoria
+2020-01-28 13:36:17,468 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [categoria_pai_id, id, descricao]
+2020-01-28 13:36:17,468 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_fkuqkgkisyom8dxthrqo1ttix]
+2020-01-28 13:36:17,468 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_fkuqkgkisyom8dxthrqo1ttix, primary]
+2020-01-28 13:36:17,504 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.cliente
+2020-01-28 13:36:17,505 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [tipo, doc_receita_federal, nome, id, email]
+2020-01-28 13:36:17,505 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-28 13:36:17,505 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-28 13:36:17,532 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.endereco
+2020-01-28 13:36:17,532 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [uf, cidade, complemento, numero, logradouro, id, cliente_id, cep]
+2020-01-28 13:36:17,532 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_5hhg2rsvgex3ulsdy1svy8s62]
+2020-01-28 13:36:17,532 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_5hhg2rsvgex3ulsdy1svy8s62, primary]
+2020-01-28 13:36:17,599 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.grupo
+2020-01-28 13:36:17,599 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [nome, id, descricao]
+2020-01-28 13:36:17,599 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-28 13:36:17,599 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [primary]
+2020-01-28 13:36:17,614 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.item_pedido
+2020-01-28 13:36:17,614 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [id, produto_id, quantidade, pedido_id, valor_unitario]
+2020-01-28 13:36:17,614 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v]
+2020-01-28 13:36:17,615 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_r5pmilksmhlmh5mccbvplg8b7, fk_4ql24iphly75cwd5vx596mx8v, primary]
+2020-01-28 13:36:17,641 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.pedido
+2020-01-28 13:36:17,642 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [data_criacao, entrega_numero, observacao, valor_desconto, entrega_cidade, entrega_cep, entrega_complemento, data_entrega, valor_total, forma_pagamento, entrega_logradouro, entrega_uf, valor_frete, id, cliente_id, status, vendedor_id]
+2020-01-28 13:36:17,642 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_jvfwgjbqjdp5sk1qto0trgpla, fk_k1yq38ro8cntr2av6fllk3xwt]
+2020-01-28 13:36:17,642 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_jvfwgjbqjdp5sk1qto0trgpla, fk_k1yq38ro8cntr2av6fllk3xwt, primary]
+2020-01-28 13:36:17,663 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.produto
+2020-01-28 13:36:17,664 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [nome, id, quantidade_estoque, categoria_id, sku, valor_unitario]
+2020-01-28 13:36:17,664 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_el0d58htywfs914w4grf6aoa0]
+2020-01-28 13:36:17,664 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [uk_j6npst3feop938l4x5h675kyv, fk_el0d58htywfs914w4grf6aoa0, primary]
+2020-01-28 13:36:17,692 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario
+2020-01-28 13:36:17,692 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [senha, nome, id, email]
+2020-01-28 13:36:17,693 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: []
+2020-01-28 13:36:17,693 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [uk_5171l57faosmj8myawaucatdw, primary]
+2020-01-28 13:36:17,713 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000261: Table found: cursojavaee.usuario_grupo
+2020-01-28 13:36:17,713 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000037: Columns: [usuario_id, grupo_id]
+2020-01-28 13:36:17,713 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000108: Foreign keys: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-28 13:36:17,713 INFO  [org.hibernate.tool.hbm2ddl.TableMetadata] HHH000126: Indexes: [fk_m32it4c8rkf6t8nno481k43q4, fk_5p20y5panoea7wc040qm6eemd]
+2020-01-28 13:36:17,715 INFO  [org.hibernate.tool.hbm2ddl.SchemaUpdate] HHH000232: Schema update complete
