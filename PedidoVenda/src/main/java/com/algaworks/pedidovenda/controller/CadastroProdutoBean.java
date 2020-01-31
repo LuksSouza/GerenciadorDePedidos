@@ -1,6 +1,7 @@
 package com.algaworks.pedidovenda.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,6 +13,7 @@ import javax.inject.Named;
 import com.algaworks.pedidovenda.model.Categoria;
 import com.algaworks.pedidovenda.model.Produto;
 import com.algaworks.pedidovenda.repository.Categorias;
+import com.algaworks.pedidovenda.service.CadastroProdutoService;
 import com.algaworks.pedidovenda.util.jsf.FacesUtil;
 
 @Named
@@ -22,6 +24,9 @@ public class CadastroProdutoBean implements Serializable {
 
 	@Inject
 	private Categorias categoriasRepository;
+	
+	@Inject
+	private CadastroProdutoService cadastroProdutoService;
 
 	private Produto produto;
 	private List<Categoria> categorias;
@@ -30,7 +35,7 @@ public class CadastroProdutoBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		this.produto = new Produto();
+		this.limpar();
 	}
 
 	public void carregaObjetosDaTela(ComponentSystemEvent event) {
@@ -44,7 +49,16 @@ public class CadastroProdutoBean implements Serializable {
 	}
 
 	public void salvar() {
-		System.out.println("Recebendo categoria pai: "+this.categoriaPai.getDescricao());
+		cadastroProdutoService.salvar(produto);
+		limpar();
+		
+		FacesUtil.addInfoMessage("Produto salvo com sucesso.");
+	}
+
+	private void limpar() {
+		this.produto = new Produto();
+		this.categoriaPai = null;
+		this.subcategorias = new ArrayList<Categoria>();
 	}
 
 	public Produto getProduto() {
