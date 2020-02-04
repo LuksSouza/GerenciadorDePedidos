@@ -1,16 +1,21 @@
 package com.algaworks.pedidovenda.controller;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.algaworks.pedidovenda.model.Produto;
 import com.algaworks.pedidovenda.repository.Produtos;
 import com.algaworks.pedidovenda.repository.filter.ProdutoFilter;
 
-@ManagedBean
-public class PesquisaProdutoBean {
+@Named
+@ViewScoped
+public class PesquisaProdutoBean implements Serializable {
+
+	private static final long serialVersionUID = 2721925547903851056L;
 
 	@Inject
 	private Produtos produtos;
