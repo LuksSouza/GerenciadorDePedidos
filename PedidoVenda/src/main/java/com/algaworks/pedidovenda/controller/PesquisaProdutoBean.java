@@ -15,38 +15,38 @@ import com.algaworks.pedidovenda.repository.filter.ProdutoFilter;
 @ViewScoped
 public class PesquisaProdutoBean implements Serializable {
 
-	private static final long serialVersionUID = 2721925547903851056L;
+    private static final long serialVersionUID = 2721925547903851056L;
 
-	@Inject
-	private Produtos produtos;
-	
-	private ProdutoFilter filtro;
-	private List<Produto> produtosFiltrados;
+    @Inject
+    private Produtos produtos;
+
+    private ProdutoFilter filtro;
+    private List<Produto> produtosFiltrados;
     private Produto produtoSelecionado;
 
     public PesquisaProdutoBean() {
-    	this.filtro = new ProdutoFilter();
+	this.filtro = new ProdutoFilter();
     }
 
     public void pesquisar() {
-    	this.produtosFiltrados = this.produtos.filtrados(filtro);
+	this.produtosFiltrados = this.produtos.filtrados(filtro);
     }
-    
+
     public void excluir() {
-        this.produtosFiltrados.remove(this.produtoSelecionado);
-        this.produtoSelecionado = null;
+	this.produtosFiltrados.remove(this.produtoSelecionado);
+	this.produtoSelecionado = null;
     }
 
     public List<Produto> getProdutosFiltrados() {
-        return this.produtosFiltrados;
+	return this.produtosFiltrados;
     }
 
     public void setProdutoSelecionado(Produto produtoSelecionado) {
-        this.produtoSelecionado = produtoSelecionado;
+	this.produtoSelecionado = produtoSelecionado;
     }
 
-	public ProdutoFilter getFiltro() {
-		return filtro;
-	}
-    
+    public ProdutoFilter getFiltro() {
+	return filtro;
+    }
+
 }
