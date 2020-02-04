@@ -60,3 +60,9 @@ PedidoVenda/target/
 
 # IntelliJ
 .idea/
+
+# Eclipse
+PedidoVenda/.classpath
+
+# Tomcat
+apache-tomcat-7.0.47/logs/*
