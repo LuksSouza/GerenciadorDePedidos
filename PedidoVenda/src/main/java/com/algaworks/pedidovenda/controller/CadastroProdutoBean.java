@@ -20,69 +20,75 @@ import com.algaworks.pedidovenda.util.jsf.FacesUtil;
 @ViewScoped
 public class CadastroProdutoBean implements Serializable {
 
-    private static final long serialVersionUID = 8108185350428411119L;
+	private static final long serialVersionUID = 8108185350428411119L;
 
-    @Inject
-    private Categorias categoriasRepository;
+	@Inject
+	private Categorias categoriasRepository;
 
-    @Inject
-    private CadastroProdutoService cadastroProdutoService;
+	@Inject
+	private CadastroProdutoService cadastroProdutoService;
 
-    private Produto produto;
-    private List<Categoria> categorias;
-    private Categoria categoriaPai;
-    private List<Categoria> subcategorias;
+	private Produto produto;
+	private List<Categoria> categorias;
+	private Categoria categoriaPai;
+	private List<Categoria> subcategorias;
 
-    @PostConstruct
-    public void init() {
-	this.limpar();
-    }
-
-    public void carregaObjetosDaTela(ComponentSystemEvent event) {
-	if (FacesUtil.isNotPostback()) {
-	    this.categorias = categoriasRepository.raizes();
+	@PostConstruct
+	public void init() {
+		this.limpar();
 	}
-    }
 
-    public void carregarSubcategorias() {
-	this.subcategorias = categoriasRepository.subcategoriasDe(this.categoriaPai);
-    }
+	public void carregaObjetosDaTela(ComponentSystemEvent event) {
+		if (FacesUtil.isNotPostback()) {
+			this.categorias = categoriasRepository.raizes();
+			
+			this.carregarSubcategorias();
+		}
+	}
 
-    public void salvar() {
-	cadastroProdutoService.salvar(produto);
-	limpar();
+	public void carregarSubcategorias() {
+		this.subcategorias = categoriasRepository.subcategoriasDe(this.categoriaPai);
+	}
 
-	FacesUtil.addInfoMessage("Produto salvo com sucesso.");
-    }
+	public void salvar() {
+		cadastroProdutoService.salvar(produto);
+		limpar();
 
-    private void limpar() {
-	this.produto = new Produto();
-	this.categoriaPai = null;
-	this.subcategorias = new ArrayList<Categoria>();
-    }
+		FacesUtil.addInfoMessage("Produto salvo com sucesso.");
+	}
 
-    public Produto getProduto() {
-	return produto;
-    }
+	private void limpar() {
+		this.produto = new Produto();
+		this.categoriaPai = null;
+		this.subcategorias = new ArrayList<Categoria>();
+	}
 
-    public void setProduto(Produto produto) {
-	this.produto = produto;
-    }
+	public Produto getProduto() {
+		return produto;
+	}
 
-    public List<Categoria> getCategorias() {
-	return categorias;
-    }
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+		
+		if (produto != null) {
+			this.categoriaPai = produto.getCategoria().getCategoriaPai();
+		}
+	}
 
-    public Categoria getCategoriaPai() {
-	return categoriaPai;
-    }
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
 
-    public void setCategoriaPai(Categoria categoriaPai) {
-	this.categoriaPai = categoriaPai;
-    }
+	public Categoria getCategoriaPai() {
+		return categoriaPai;
+	}
 
-    public List<Categoria> getSubcategorias() {
-	return subcategorias;
-    }
+	public void setCategoriaPai(Categoria categoriaPai) {
+		this.categoriaPai = categoriaPai;
+	}
+
+	public List<Categoria> getSubcategorias() {
+		return subcategorias;
+	}
 
 }

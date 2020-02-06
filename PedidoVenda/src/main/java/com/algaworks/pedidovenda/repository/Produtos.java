@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 
 import org.apache.commons.lang3.StringUtils;
@@ -20,7 +19,7 @@ import com.algaworks.pedidovenda.repository.filter.ProdutoFilter;
 public class Produtos implements Serializable {
 
 	private static final long serialVersionUID = -5952531736605712160L;
-	
+
 	@Inject
 	private EntityManager manager;
 
@@ -31,27 +30,31 @@ public class Produtos implements Serializable {
 	public Produto porSKU(String sku) {
 		try {
 			return manager.createQuery("from Produto where sku = :sku", Produto.class)
-					.setParameter("sku", sku.toUpperCase())
-					.getSingleResult();
+					.setParameter("sku", sku.toUpperCase()).getSingleResult();
 		} catch (NoResultException e) {
 			return null;
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Produto> filtrados(ProdutoFilter filtro) {
-		
+
 		Session session = manager.unwrap(Session.class);
 		Criteria criteria = session.createCriteria(Produto.class);
-		
+
 		if (StringUtils.isNotBlank(filtro.getSku())) {
 			criteria.add(Restrictions.eq("sku", filtro.getSku()));
 		}
-		
+
 		if (StringUtils.isNotBlank(filtro.getNome())) {
 			criteria.add(Restrictions.ilike("nome", filtro.getNome(), MatchMode.ANYWHERE));
 		}
-		
+
 		return criteria.list();
+	}
+
+	public Produto porId(long id) {
+		return manager.find(Produto.class, id);
 	}
 
 }
