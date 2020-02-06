@@ -13,30 +13,31 @@ import com.algaworks.pedidovenda.util.cdi.CDIServiceLocator;
 @FacesConverter(forClass = Produto.class)
 public class ProdutoConverter implements Converter {
 
-	private Produtos produtos;
-	
-	public ProdutoConverter() {
-		this.produtos = CDIServiceLocator.getBean(Produtos.class);
-	}
-	
-	@Override
-	public Object getAsObject(FacesContext context, UIComponent component, String value) {
-		
-		if (value != null) {
-			return produtos.porId(Long.parseLong(value));
-		}
-		
-		return null;
+    private Produtos produtos;
+
+    public ProdutoConverter() {
+	this.produtos = CDIServiceLocator.getBean(Produtos.class);
+    }
+
+    @Override
+    public Object getAsObject(FacesContext context, UIComponent component, String value) {
+
+	if (value != null) {
+	    return produtos.porId(Long.parseLong(value));
 	}
 
-	@Override
-	public String getAsString(FacesContext context, UIComponent component, Object value) {
-		
-		if (value != null) {
-			return ((Produto) value).getId().toString();
-		}
-		
-		return null;
+	return null;
+    }
+
+    @Override
+    public String getAsString(FacesContext context, UIComponent component, Object value) {
+
+	if (value != null) {
+	    Produto produto = (Produto) value;
+	    return produto.getId() == null ? null : produto.getId().toString();
 	}
+
+	return null;
+    }
 
 }
