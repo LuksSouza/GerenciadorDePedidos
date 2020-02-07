@@ -6,6 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceException;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;
@@ -15,46 +16,59 @@ import org.hibernate.criterion.Restrictions;
 
 import com.algaworks.pedidovenda.model.Produto;
 import com.algaworks.pedidovenda.repository.filter.ProdutoFilter;
+import com.algaworks.pedidovenda.service.NegocioException;
+import com.algaworks.pedidovenda.util.jpa.Transactional;
 
 public class Produtos implements Serializable {
 
-	private static final long serialVersionUID = -5952531736605712160L;
+    private static final long serialVersionUID = -5952531736605712160L;
 
-	@Inject
-	private EntityManager manager;
+    @Inject
+    private EntityManager manager;
 
-	public Produto guardar(Produto produto) {
-		return manager.merge(produto);
+    public Produto guardar(Produto produto) {
+	return manager.merge(produto);
+    }
+
+    public Produto porSKU(String sku) {
+	try {
+	    return manager.createQuery("from Produto where sku = :sku", Produto.class).setParameter("sku", sku.toUpperCase())
+		    .getSingleResult();
+	} catch (NoResultException e) {
+	    return null;
+	}
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Produto> filtrados(ProdutoFilter filtro) {
+
+	Session session = manager.unwrap(Session.class);
+	Criteria criteria = session.createCriteria(Produto.class);
+
+	if (StringUtils.isNotBlank(filtro.getSku())) {
+	    criteria.add(Restrictions.eq("sku", filtro.getSku()));
 	}
 
-	public Produto porSKU(String sku) {
-		try {
-			return manager.createQuery("from Produto where sku = :sku", Produto.class)
-					.setParameter("sku", sku.toUpperCase()).getSingleResult();
-		} catch (NoResultException e) {
-			return null;
-		}
+	if (StringUtils.isNotBlank(filtro.getNome())) {
+	    criteria.add(Restrictions.ilike("nome", filtro.getNome(), MatchMode.ANYWHERE));
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Produto> filtrados(ProdutoFilter filtro) {
+	return criteria.list();
+    }
 
-		Session session = manager.unwrap(Session.class);
-		Criteria criteria = session.createCriteria(Produto.class);
+    public Produto porId(long id) {
+	return manager.find(Produto.class, id);
+    }
 
-		if (StringUtils.isNotBlank(filtro.getSku())) {
-			criteria.add(Restrictions.eq("sku", filtro.getSku()));
-		}
-
-		if (StringUtils.isNotBlank(filtro.getNome())) {
-			criteria.add(Restrictions.ilike("nome", filtro.getNome(), MatchMode.ANYWHERE));
-		}
-
-		return criteria.list();
+    @Transactional
+    public void remover(Produto produtoSelecionado) {
+	try {
+	    produtoSelecionado = this.porId(produtoSelecionado.getId()); 
+	    manager.remove(produtoSelecionado);
+	    manager.flush();
+	} catch(PersistenceException e) {
+	    throw new NegocioException("Produto não pode ser excluído.");
 	}
-
-	public Produto porId(long id) {
-		return manager.find(Produto.class, id);
-	}
+    }
 
 }
