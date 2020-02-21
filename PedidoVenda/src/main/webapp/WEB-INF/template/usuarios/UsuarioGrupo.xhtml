@@ -4,25 +4,27 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-	<p:dataTable id="gruposDataTable" value="#{pesquisaUsuarioBean.grupos}" var="grupo" 
+	<p:dataTable id="gruposDataTable" value="#{cadastroUsuarioBean.usuario.grupos}" var="grupo" 
 		style="margin-top: 20px" emptyMessage="Nenhum grupo adicionado." 
 		paginator="true" rows="5" paginatorPosition="bottom" paginatorAlwaysVisible="false">
 	
 		<p:column headerText="Grupo">
-			<h:outputText value="#{grupo.descricao}"/>
+			<h:outputText value="#{grupo.nome}"/>
 		</p:column>
 
 		<p:column style="text-align: center; width: 25px">
-			<p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirmacaoExclusaoGrupo').show(); return false;"/>
+			<p:commandButton icon="ui-icon-trash" title="Excluir" oncomplete="PF('confirmacaoExclusaoGrupo').show(); return false;">
+				<f:setPropertyActionListener target="#{cadastroUsuarioBean.grupoSelecionadoExcluir}" value="#{grupo}" />
+			</p:commandButton>
 		</p:column>
 		
 	</p:dataTable>
-	
-	<p:confirmDialog header="Exclusão de grupo"
-		message="Tem certeza que deseja excluir o grupo?"
+
+	<p:confirmDialog id="excluirGrupoDialog" header="Exclusão de grupo"
+		message="Tem certeza que deseja excluir o grupo #{cadastroUsuarioBean.grupoSelecionadoExcluir.nome}?"
 		widgetVar="confirmacaoExclusaoGrupo">
 
-		<p:commandButton value="Sim" update="gruposDataTable"
+		<p:commandButton value="Sim" action="#{cadastroUsuarioBean.excluirGrupo}" update="gruposDataTable"
 			oncomplete="PF('confirmacaoExclusaoGrupo').hide()" />
 		<p:button value="Não"
 			onclick="PF('confirmacaoExclusaoGrupo').hide(); return false;" />
